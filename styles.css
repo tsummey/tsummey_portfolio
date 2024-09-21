@@ -28,6 +28,7 @@ header h2 {
 
 /* Navigation Menu */
 /* Remove default bullet points */
+/* Remove default bullet points */
 nav ul {
     list-style: none; /* Removes bullet points */
     padding: 0;
@@ -37,29 +38,27 @@ nav ul {
 
 nav ul li {
     display: inline; /* Horizontal menu */
-    margin-right: 1rem; /* Space between menu items */
+    margin: 0; /* Reset margin to avoid extra spaces */
     position: relative;
 }
 
-/* Add pipe only between menu items, not before the first one */
+/* Add pipe with a single space before and after it */
 nav ul li:not(:first-child)::before {
-    content: '|'; /* Add pipe character */
+    content: ' | '; /* Add pipe with a single space before and after */
     color: #f5f5f5; /* Pipe color */
-    margin-right: 0.5rem; /* Space after pipe */
-    margin-left: 0.5rem; /* Space before pipe */
 }
 
 /* Style the links */
 nav ul li a {
     color: #f5f5f5; /* Light color for the menu items */
     text-decoration: none;
-    padding-left: 0.5rem; /* Padding for alignment */
     transition: color 0.3s ease; /* Smooth hover transition */
 }
 
 nav ul li a:hover {
     color: #4A90E2; /* Blue accent on hover */
 }
+
 
 
 /* Updated Link Colors */
