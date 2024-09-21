@@ -28,7 +28,7 @@ header h2 {
 
 /* Navigation Menu */
 nav ul {
-    list-style: none;
+    list-style: none; /* Removes bullet points */
     padding: 0;
     text-align: center;
 }
