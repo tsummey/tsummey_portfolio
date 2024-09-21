@@ -96,27 +96,6 @@ section h3 {
     border-radius: 5px;
 }
 
-/* Styling for the Customers Section */
-#customers {
-    text-align: left; /* Center align the heading */
-    margin: 2rem 0;
-    padding: 0 1rem;
-}
-
-#customers .customer-list {
-    display: inline-block; /* Keep the content centered */
-    text-align: center; /* Left-justify the content inside */
-    max-width: 900px; /* Optional: Set a max width to prevent too much stretching */
-}
-
-#customers p {
-    font-size: 1.2rem; /* Slightly larger text for visibility */
-    color: #f5f5f5; /* Light text color */
-    margin: 0;
-}
-
-
-
 /* Footer */
 footer {
     background-color: #1e1e1e; /* Dark footer */
