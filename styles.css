@@ -57,6 +57,13 @@ a:hover {
     color: #b0c4de; /* Subtle blue-grey for hover effect */
 }
 
+/* Remove indentation from bullet points */
+ul {
+    list-style-position: inside; /* Moves bullet to the start of the list item */
+    padding-left: 0; /* Removes left padding */
+    margin-left: 0; /* Removes margin */
+}
+
 /* Section Styling */
 section {
     padding: 2rem;
