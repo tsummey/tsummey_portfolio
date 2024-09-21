@@ -98,8 +98,9 @@ section h3 {
 
 /* Styling for the Customers Section */
 #customers {
-    text-align: center; /* Center align the entire section */
+    text-align: left; /* Left justify the entire section */
     margin: 2rem 0; /* Space around the section */
+    padding: 0 1rem; /* Add some padding to match the others */
 }
 
 #customers p {
@@ -110,20 +111,6 @@ section h3 {
     margin: 0;
 }
 
-/* Ensure pipes are consistent between customers with a single space */
-#customers p::before,
-#customers p::after {
-    content: '';
-    margin-left: 0;
-}
-
-#customers p::before {
-    content: ''; /* No content before the first customer */
-}
-
-#customers p::after {
-    content: ''; /* No content after the last customer */
-}
 
 /* Footer */
 footer {
