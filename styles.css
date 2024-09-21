@@ -96,6 +96,35 @@ section h3 {
     border-radius: 5px;
 }
 
+/* Styling for the Customers Section */
+#customers {
+    text-align: center; /* Center align the entire section */
+    margin: 2rem 0; /* Space around the section */
+}
+
+#customers p {
+    font-size: 1.2rem; /* Slightly larger text for visibility */
+    color: #f5f5f5; /* Light text color */
+    display: inline; /* Inline display to prevent wrapping */
+    padding: 0;
+    margin: 0;
+}
+
+/* Ensure pipes are consistent between customers with a single space */
+#customers p::before,
+#customers p::after {
+    content: '';
+    margin-left: 0;
+}
+
+#customers p::before {
+    content: ''; /* No content before the first customer */
+}
+
+#customers p::after {
+    content: ''; /* No content after the last customer */
+}
+
 /* Footer */
 footer {
     background-color: #1e1e1e; /* Dark footer */
