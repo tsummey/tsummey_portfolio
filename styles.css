@@ -98,14 +98,14 @@ section h3 {
 
 /* Styling for the Customers Section */
 #customers {
-    text-align: center; /* Center align the heading */
+    text-align: left; /* Center align the heading */
     margin: 2rem 0;
     padding: 0 1rem;
 }
 
 #customers .customer-list {
     display: inline-block; /* Keep the content centered */
-    text-align: left; /* Left-justify the content inside */
+    text-align: center; /* Left-justify the content inside */
     max-width: 900px; /* Optional: Set a max width to prevent too much stretching */
 }
 
