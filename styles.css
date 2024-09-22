@@ -7,6 +7,7 @@ body {
     padding: 0;
 }
 
+/* Header Styling */
 header {
     background-color: #2b2b2b; /* Darker background for header */
     color: #f5f5f5; /* Light text */
@@ -55,9 +56,9 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FF9900; /* Vibrant hover color */
+    color: #FF9900; /* Use secondary accent for hover effect */
     transition: color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 2px -2px rgba(255, 153, 0, 0.8); /* Add a subtle glowing effect */
+    box-shadow: 0 4px 2px -2px rgba(255, 153, 0, 0.8); /* Subtle glowing effect */
 }
 
 /* Updated Link Colors */
@@ -74,17 +75,18 @@ a:hover {
 /* Section Styling */
 section {
     padding: 2rem;
-    background-color: #2b2b2b;
+    background-color: #2b2b2b; /* Darker sections */
     margin: 1rem auto;
     max-width: 900px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
+/* Lighter Section */
 section.light {
-    background-color: #2F2F2F; /* Slightly lighter background */
-    color: #f5f5f5; /* Keep text light for readability */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add more dimension */
+    background-color: #2f2f2f; /* Slightly lighter section for contrast */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* More dimension */
+    color: #f5f5f5;
 }
 
 section h3 {
