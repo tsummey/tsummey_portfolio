@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #1e1e1e; /* Dark background for modern look */
     color: #f5f5f5; /* Light text for contrast */
     margin: 0;
@@ -16,19 +16,20 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem; /* Commanding presence */
+    font-weight: 700; /* Strong, bold */
     color: #4A90E2; /* Blue accent for the title */
+    letter-spacing: 1px; /* Subtle spacing for clarity */
 }
 
 header h2 {
     margin: 0.5rem 0;
-    font-weight: 300;
+    font-weight: 300; /* Thin, professional look */
+    font-size: 1.5rem;
     color: #aaaaaa; /* Subtle grey for subtitle */
 }
 
 /* Navigation Menu */
-/* Remove default bullet points */
-/* Remove default bullet points */
 nav ul {
     list-style: none; /* Removes bullet points */
     padding: 0;
@@ -38,25 +39,23 @@ nav ul {
 
 nav ul li {
     display: inline; /* Horizontal menu */
-    margin: 0; /* Reset margin to avoid extra spaces */
+    margin: 0;
     position: relative;
 }
 
-/* Add pipe with a single space before and after it */
 nav ul li:not(:first-child)::before {
-    content: ' | '; /* Add pipe with a single space before and after */
-    color: #f5f5f5; /* Pipe color */
+    content: ' | ';
+    color: #f5f5f5;
 }
 
-/* Style the links */
 nav ul li a {
-    color: #f5f5f5; /* Light color for the menu items */
+    color: #f5f5f5;
     text-decoration: none;
-    transition: color 0.3s ease; /* Smooth hover transition */
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #4A90E2; /* Blue accent on hover */
+    color: #FF9900; /* Use secondary accent for hover effect */
 }
 
 /* Updated Link Colors */
@@ -73,60 +72,68 @@ a:hover {
 /* Section Styling */
 section {
     padding: 2rem;
-    background-color: #2b2b2b; /* Dark background for sections */
+    background-color: #2b2b2b;
     margin: 1rem auto;
     max-width: 900px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Soft shadow for content sections */
-    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 section h3 {
-    border-bottom: 2px solid #4A90E2; /* Blue accent for headers */
+    border-bottom: 2px solid #4A90E2;
     padding-bottom: 0.5rem;
-    color: #f5f5f5; /* Light text */
+    color: #f5f5f5;
 }
 
 .project {
-    background-color: #333; /* Dark background for project cards */
+    background-color: #333;
     margin: 1rem 0;
     padding: 1rem;
-    border-left: 5px solid #4A90E2; /* Blue accent on the project cards */
+    border-left: 5px solid #FF9900; /* Secondary accent on project cards */
     border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Align the Customers Section like the others */
-#customers {
-    padding: 2rem;
-    background-color: #2b2b2b; /* Match the background of other sections */
-    margin: 1rem auto;
-    max-width: 900px;
-    text-align: left; /* Left align the content */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Same shadow effect */
-    border-radius: 10px; /* Rounded corners to match */
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-#customers p {
-    font-size: 1.2rem; /* Same font size for readability */
-    color: #f5f5f5; /* Light text color */
-    margin: 0;
+/* Progress Bar Styling */
+.skill {
+    margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+    background-color: #444;
+    border-radius: 5px;
+    width: 100%;
+    height: 10px;
+    margin-bottom: 1rem;
+}
+
+.progress {
+    background-color: #4A90E2;
+    height: 100%;
+    border-radius: 5px;
 }
 
 /* Footer */
 footer {
-    background-color: #1e1e1e; /* Dark footer */
-    color: #f5f5f5; /* Light text for footer */
+    background-color: #1e1e1e;
+    color: #f5f5f5;
     text-align: center;
     padding: 2rem 0;
 }
 
 footer a {
-    color: #cccccc; /* Light grey for footer links */
+    color: #cccccc;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: #ffffff; /* White for clean hover in footer */
+    color: #ffffff;
 }
 
 /* Media Query for Mobile Responsiveness */
@@ -136,7 +143,7 @@ footer a:hover {
     }
     
     header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     header h2 {
