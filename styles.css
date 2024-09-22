@@ -63,7 +63,7 @@ nav ul li a:hover {
 
 /* Updated Link Colors */
 a {
-    color: #5a5a5a; /* Cool grey for modern, subtle links */
+    color: #f5f5f5; /* Cool grey for modern, subtle links */
     text-decoration: none;
     transition: color 0.3s ease;
 }
