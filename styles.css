@@ -123,7 +123,7 @@ section h3 {
 }
 
 .progress {
-    background-color: #4A90E2;
+    background-color: #32CD32; /* Professional green for progress bars */
     height: 100%;
     border-radius: 5px;
 }
