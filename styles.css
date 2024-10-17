@@ -1,166 +1,186 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #1e1e1e; /* Dark background for modern look */
-    color: #f5f5f5; /* Light text for contrast */
+    color: #333;
+    line-height: 1.7;
+    background-color: #f9f9f9;
     margin: 0;
-    padding: 0;
 }
 
-/* Header Styling */
-header {
-    background-color: #2b2b2b; /* Darker background for header */
-    color: #f5f5f5; /* Light text */
-    padding: 1rem 0;
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #2A3F54 0%, #0073e6 100%);
+    color: #fff;
+    padding: 6rem 0;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 3rem; /* Commanding presence */
-    font-weight: 700; /* Strong, bold */
-    color: #4A90E2; /* Blue accent for the title */
-    letter-spacing: 1px; /* Subtle spacing for clarity */
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
 }
 
-header h2 {
-    margin: 0.5rem 0;
-    font-weight: 300; /* Thin, professional look */
+.hero p {
     font-size: 1.5rem;
-    color: #aaaaaa; /* Subtle grey for subtitle */
+    margin-top: 1rem;
 }
 
-/* Navigation Menu */
-nav ul {
-    list-style: none; /* Removes bullet points */
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline; /* Horizontal menu */
-    margin: 0;
-    position: relative;
-}
-
-nav ul li:not(:first-child)::before {
-    content: ' | ';
-    color: #f5f5f5;
-}
-
-nav ul li a {
-    color: #f5f5f5;
+.cta-btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
     text-decoration: none;
-    transition: color 0.3s ease;
+    border-radius: 50px;
+    margin-top: 2rem;
+    display: inline-block;
+    font-weight: 600;
+    transition: background 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #FF9900; /* Use secondary accent for hover effect */
-    transition: color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 2px -2px rgba(255, 153, 0, 0.8); /* Subtle glowing effect */
+.cta-btn:hover {
+    background-color: #0073e6;
+    color: white;
 }
 
-/* Updated Link Colors */
-a {
-    color: #f5f5f5; /* Cool grey for modern, subtle links */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #b0c4de; /* Subtle blue-grey for hover effect */
-}
-
-/* Section Styling */
+/* Section Styles */
 section {
-    padding: 2rem;
-    background-color: #2b2b2b; /* Darker sections */
-    margin: 1rem auto;
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* About Section */
+.about p {
+    font-size: 1.2rem;
     max-width: 900px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin: 1rem auto;
+    color: #555;
+    text-align: justify;
+}
+
+/* Trusted By Section */
+.trusted {
+    background-color: #f4f4f4;
+    padding: 4rem 0;
+}
+
+.trusted-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.org {
+    background-color: #fff;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-}
-
-/* Lighter Section */
-section.light {
-    background-color: #2f2f2f; /* Slightly lighter section for contrast */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* More dimension */
-    color: #f5f5f5;
-}
-
-section h3 {
-    border-bottom: 2px solid #4A90E2;
-    padding-bottom: 0.5rem;
-    color: #f5f5f5;
-}
-
-.project {
-    background-color: #333;
-    margin: 1rem 0;
-    padding: 1rem;
-    border-left: 5px solid #FF9900; /* Secondary accent on project cards */
-    border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+.org:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Progress Bar Styling */
-.skill {
-    margin-bottom: 1.5rem;
+/* Projects Section */
+.projects {
+    background-color: #f4f4f4;
 }
 
-.progress-bar {
-    background-color: #444;
-    border-radius: 5px;
-    width: 100%;
-    height: 10px;
-    margin-bottom: 1rem;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-.progress {
-    background-color: #32CD32; /* Professional green for progress bars */
-    height: 100%;
-    border-radius: 5px;
+.card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Footer */
-footer {
-    background-color: #1e1e1e;
-    color: #f5f5f5;
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills Section */
+.skills {
+    background-color: #fff;
+}
+
+.skill-card {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Certifications Section */
+.certifications {
+    background-color: #f4f4f4;
     text-align: center;
-    padding: 2rem 0;
 }
 
-footer a {
-    color: #cccccc;
+.certifications h2 {
+    margin-bottom: .75rem;
+}
+
+.cert-list {
+    list-style-type: disc;
+    padding-left: 0;
+    margin: .75rem auto;
+    display: inline-block;
+    text-align: left;
+}
+
+.cert-list li {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #2A3F54;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact a {
+    color: #ffcc00;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: #ffffff;
-}
-
-/* Media Query for Mobile Responsiveness */
-@media (max-width: 768px) {
-    body {
-        font-size: 1rem;
-    }
-    
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    header h2 {
-        font-size: 1.2rem;
-    }
-    
-    section {
-        padding: 1rem;
-    }
+.contact a:hover {
+    color: #fff;
 }
