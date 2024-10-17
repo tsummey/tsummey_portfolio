@@ -18,7 +18,7 @@ body {
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 /* Hero Section */
@@ -30,25 +30,27 @@ body {
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 0rem;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-top: 1rem;
+    font-size: 1.25rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
 }
 
 .cta-btn {
     background-color: #ffcc00;
     color: #333;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
     text-decoration: none;
     border-radius: 50px;
     margin-top: 2rem;
     display: inline-block;
-    font-weight: 600;
+    font-weight: 500;
     transition: background 0.3s ease;
 }
 
@@ -92,15 +94,16 @@ section h2 {
     color: #333;
 }
 
+/* For Download Resume button */
 .download-btn {
     background-color: #0073e6;
     color: white;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 0.5rem 1rem; /* Reduce padding for smaller button */
+    font-size: 1rem; /* Reduce font size */
     text-decoration: none;
     border-radius: 50px;
     display: inline-block;
-    font-weight: 600;
+    font-weight: 400;
     margin-top: 2rem;
     transition: background 0.3s ease;
 }
@@ -236,10 +239,24 @@ section h2 {
         font-size: 1.2rem;
     }
 
-    .cta-btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-    }
+/* For Discover More button */
+.cta-btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 0.5rem 1rem; /* Reduce padding for smaller button */
+    font-size: 1rem; /* Reduce font size */
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 2rem;
+    display: inline-block;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #0073e6;
+    color: white;
+}
 
     /* Grid Layout */
     .grid {
