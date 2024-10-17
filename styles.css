@@ -79,6 +79,35 @@ section h2 {
     text-align: justify;
 }
 
+/* Resume Download Section */
+.resume-download {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.resume-download h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.download-btn {
+    background-color: #0073e6;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #005bb5;
+}
+
 /* Trusted By Section */
 .trusted {
     background-color: #f4f4f4;
