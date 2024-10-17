@@ -101,6 +101,7 @@ section h2 {
     border-radius: 50px;
     display: inline-block;
     font-weight: 600;
+    margin-top: 2rem;
     transition: background 0.3s ease;
 }
 
