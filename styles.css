@@ -30,17 +30,39 @@ body {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 400;
-    margin-bottom: 0rem;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 0rem !important; /* Bring contact info closer to Ted Summey */
 }
 
 .hero p {
     font-size: 1.25rem;
-    margin-top: 0rem;
-    margin-bottom: 1rem;
+    margin-top: 0rem !important;
+    margin-bottom: 0rem;
 }
 
+/* Specific selector to ensure contact info is styled correctly */
+.hero .contact-info {
+    font-size: 0.8rem !important; /* Smaller font size */
+    color: white !important; /* Force the font color to white */
+    text-align: center !important; /* Center the text */
+    margin-top: 0.25rem !important; /* Bring it closer to "Ted Summey" */
+    margin-bottom: 1rem !important; /* Adjust bottom spacing */
+}
+
+.hero .contact-info a {
+    color: white !important; /* Force links to be white */
+    text-decoration: none !important; /* Remove underline */
+    margin: 0 0.3rem !important; /* Add some space between links */
+    transition: font-weight 0.3s ease, color 0.3s ease !important; /* Smooth transition */
+}
+
+.hero .contact-info a:hover {
+    font-weight: normal !important; /* Make the text bold on hover */
+    text-decoration: underline !important; /* Underline on hover */
+}
+
+/* Call-to-Action Button */
 .cta-btn {
     background-color: #ffcc00;
     color: #333;
@@ -206,7 +228,14 @@ section h2 {
     background-color: #2A3F54;
     color: white;
     padding: 4rem 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.contact .container {
+    max-width: 600px; /* Adjust the width of the container */
+    margin: 0 auto; /* Center the container */
+    text-align: left; /* Left-align the text inside the container */
 }
 
 .contact a {
@@ -238,25 +267,6 @@ section h2 {
     .hero p {
         font-size: 1.2rem;
     }
-
-/* For Discover More button */
-.cta-btn {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 0.5rem 1rem; /* Reduce padding for smaller button */
-    font-size: 1rem; /* Reduce font size */
-    text-decoration: none;
-    border-radius: 50px;
-    margin-top: 2rem;
-    display: inline-block;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
-
-.cta-btn:hover {
-    background-color: #0073e6;
-    color: white;
-}
 
     /* Grid Layout */
     .grid {
