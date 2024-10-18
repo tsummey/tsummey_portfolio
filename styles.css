@@ -265,7 +265,7 @@ section h2 {
 
     /* Contact Info Section */
     .hero .contact-info {
-        font-size: 0.8rem !important; /* Ensure the font size is small on mobile */
+        font-size: 0.8rem !important; /* Smaller font size */
         color: white !important; /* Force white text */
         text-align: center !important; /* Center the text */
         margin-bottom: 1rem;
@@ -274,11 +274,34 @@ section h2 {
     .hero .contact-info a {
         color: white !important; /* Force links to be white */
         text-decoration: none !important; /* Remove underline */
-        margin: 0 0.3rem; /* Space between links */
+        margin: 0 0.3rem; /* Add space between links */
         transition: font-weight 0.3s ease, color 0.3s ease !important; /* Smooth transition */
     }
 
     .hero .contact-info a:hover {
         text-decoration: underline !important; /* Underline on hover */
+    }
+
+    /* Grid Layout for Cards and Boxes */
+    .grid {
+        grid-template-columns: 1fr !important; /* Stacks grid items vertically */
+        gap: 1.5rem; /* Adjust gap between stacked items */
+    }
+
+    .trusted-grid {
+        grid-template-columns: 1fr !important; /* Stacks trusted items vertically */
+    }
+
+    /* Cards */
+    .card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        width: 100% !important; /* Ensure cards take up full width */
+    }
+
+    /* Organization Logos or Boxes */
+    .org {
+        padding: 1.5rem;
+        width: 100% !important; /* Ensure boxes take up full width */
     }
 }
