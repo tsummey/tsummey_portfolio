@@ -254,11 +254,6 @@ section h2 {
         font-size: 1rem;
     }
 
-    /* Container padding */
-    .container {
-        padding: 0 10px;
-    }
-
     /* Hero Section */
     .hero h1 {
         font-size: 2.5rem;
@@ -268,41 +263,22 @@ section h2 {
         font-size: 1.2rem;
     }
 
-    /* Grid Layout */
-    .grid {
-        grid-template-columns: 1fr; /* Stacks grid items vertically */
+    /* Contact Info Section */
+    .hero .contact-info {
+        font-size: 0.8rem !important; /* Ensure the font size is small on mobile */
+        color: white !important; /* Force white text */
+        text-align: center !important; /* Center the text */
+        margin-bottom: 1rem;
     }
 
-    /* Trusted By Section */
-    .trusted-grid {
-        grid-template-columns: 1fr; /* Stacks items in one column */
+    .hero .contact-info a {
+        color: white !important; /* Force links to be white */
+        text-decoration: none !important; /* Remove underline */
+        margin: 0 0.3rem; /* Space between links */
+        transition: font-weight 0.3s ease, color 0.3s ease !important; /* Smooth transition */
     }
 
-    /* Cards and Sections */
-    .card {
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .org {
-        padding: 1.5rem;
-    }
-
-    /* Certifications */
-    .certifications h2 {
-        font-size: 1.5rem;
-    }
-
-    .cert-list li {
-        font-size: 1rem;
-    }
-
-    /* Footer */
-    .contact h2 {
-        font-size: 1.5rem;
-    }
-
-    .contact a {
-        font-size: 1rem;
+    .hero .contact-info a:hover {
+        text-decoration: underline !important; /* Underline on hover */
     }
 }
