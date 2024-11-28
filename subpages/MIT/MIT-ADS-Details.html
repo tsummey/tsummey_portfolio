@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIT Applied Data Science Course Outline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(120deg, #f7f7f7, #ffffff);
+      color: #333;
+      padding-bottom: 50px;
+    }
+    .header {
+      background: linear-gradient(135deg, #2A3F54 0%, #0073e6 100%);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      height: 125px;
+      position: relative;
+    }
+    .header img {
+      width: 100px;
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: normal;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin: 40px 0 20px;
+      color: #666666;
+      border-bottom: 3px solid #eaeaea;
+      padding-bottom: 10px;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #f9f9f9;
+      color: #a90533;
+      font-weight: bold;
+    }
+    .list-group-item {
+      border: none;
+      background: transparent;
+    }
+    footer {
+      background: linear-gradient(135deg, #2A3F54 0%, #0073e6 100%);
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+    .footer-link {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .back-to-portfolio {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(to right, #8c00ff, #002fff);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1rem;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+      }
+      .back-to-portfolio:hover {
+        background-color: #005bb5;
+      }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <h1>MIT Applied Data Science Program</h1>
+    <p class="lead">Comprehensive Six-Month Professional Education Course</p>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="container mt-5">
+    <!-- Program Description -->
+    <section>
+      <h2 class="section-title"> Program Overview</h2>
+      <p class='description'>The MIT Applied Data Science Program is a comprehensive six-month professional education course designed to equip participants with advanced skills in data science, machine learning, and AI. It encompasses over 100 topics, 25+ hands-on projects, quizzes, assessments, and a capstone project with a final report and presentation.</p>
+    <p class='description'>Key topics include Python programming, statistics, machine learning (regression, classification, decision trees), deep learning (CNNs, GNNs), recommendation systems, and time series forecasting. Participants gain expertise in cutting-edge techniques such as PCA, t-SNE, network analysis, and matrix estimation while applying tools like TensorFlow, Keras, and Scikit-learn.</p>
+    <p class='description'>Projects span multiple industries, including healthcare, finance, and entertainment, focusing on predictive analytics, recommendation systems, and advanced AI implementations. This program emphasizes both theoretical depth and real-world application, preparing professionals to solve complex data-driven challenges in various domains.</p>
+    </section>
+
+    <!-- Skills Learned -->
+    <section>
+      <h2 class="section-title">Skills Gained</h2>
+      <p>Python programming | Data manipulation with NumPy and Pandas | Data visualization with Matplotlib and Seaborn | Inferential statistics | Probability distributions | Sampling and inference | Hypothesis testing | Principal Component Analysis (PCA) | t-SNE | Multidimensional scaling | Network analysis | Clustering algorithms | Decision trees | Random forests | Time series forecasting | Regression analysis | Classification models | Gaussian models | Bayesian estimators | Logistic regression | K-Nearest Neighbors (K-NN) | Cross-validation | Bootstrapping | Bias-variance tradeoff | Overfitting and regularization | Convolutional Neural Networks (CNNs) | Graph Neural Networks (GNNs) | Transfer learning | Pre-training and augmentation | Collaborative filtering | Content-based recommendation systems | Matrix estimation | TensorFlow | Keras | Scikit-learn | Fraud detection algorithms | Recommendation system development | Advanced data analysis | Model evaluation | Feature engineering | Model deployment | Project reporting | Domain-specific AI applications</p>
+    </section>
+
+    <!-- Projects Completed -->
+    <section>
+      <h2 class="section-title">Projects Completed</h2>
+      <p>Suicide Rate Analysis | CardioGood Fitness Data Analysis | FIFA World Cup | HIP Breast Cancer Screening | MNIST Digit Visualization | Education | Air Pollution | CAVIAR | Enron | Game of Thrones Network Analysis | Network Stock Portfolio Optimization | Spherical Cluster Comparison | Socio-economic factors for geographic clustering | Auto-mpg Analysis | AllLife Bank Customer Segmentation | Customers in restaurants | HR Employee Attrition Prediction | Titanic Survival Prediction | Forecasting Consumer Price Index | Bitcoin Price Prediction | Potential Customers Prediction | Effects of Advertising on Sales | BigMart Sales Prediction | Loan Default Prediction | Boston House Price Prediction | Fashion MNIST Image Classification | University Admission Prediction | Brain Tumor Identification | Rice Type Classification | COVID-19 Chest X-Ray Classification | Movie Recommendation System Using Graph Neural Networks | Audio MSINT Digit Recognition | CIFAR-10 Image Classification | Movie Recommendation System Part 1 | Yelp Restaurant Recommendation System Part 1 | Movie Recommendation System Part 2 | Amazon Product Recommendation System</p>
+    </section>
+
+    <!-- Courses and Modules -->
+    <section>
+      <h2 class="section-title">Course Modules</h2>
+      <div class="accordion" id="courseAccordion">
+        <!-- Course 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="course1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#module1" aria-expanded="true" aria-controls="module1">
+              Course 1: Foundations – Python and Statistics
+            </button>
+          </h2>
+          <div id="module1" class="accordion-collapse collapse show" aria-labelledby="course1">
+            <div class="accordion-body">
+                <p class='description'>This course will aim to build the programming and statistical foundations necessary for the rest of the program. It will cover the concepts, tools, and techniques that will be required to effectively learn and implement the ideas that will be covered in subsequent courses. </p>
+                <b>Module 1: Python for Data Science Foundations</b>
+                <p>This module provides a solid foundation in key concepts and techniques essential for data science and statistical analysis. It begins with a hands-on exploration of Python libraries, NumPy and Pandas, for data manipulation, emphasizing dataframes and series. Participants then dive into data visualization using Matplotlib and Seaborn, mastering tools to convey insights effectively. The statistical segment introduces core principles, including inferential statistics, probability distributions, and sampling. Advanced topics like the Central Limit Theorem, hypothesis testing (including one-tailed and two-tailed tests), and confidence intervals are thoroughly covered, offering practical steps for data-driven decision-making and analysis.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Course 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="course2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#module2" aria-expanded="false" aria-controls="module2">
+              Course 2: Data Analysis and Visualization
+            </button>
+          </h2>
+          <div id="module2" class="accordion-collapse collapse" aria-labelledby="course2">
+            <div class="accordion-body">
+                <p class='description'>Welcome to the course on Data Analysis & Visualization. This course will introduce you to the tools and techniques utilized to explore data and discover hidden patterns using visualization.</p>
+                <p class='description'>The primary goal of this course is to understand various data exploration and data projection techniques, learn about the problem domains where network theory and ideas such as network centrality find use, and understand how and where to apply clustering algorithms from unsupervised learning.</p>
+                <!-- Modules -->
+                <b>Module 1: Data Exploration and Visualization</b>
+                <p>This module offers an in-depth exploration of advanced techniques for analyzing and interpreting complex datasets. It begins with the fundamentals of data collection and hypothesis testing, emphasizing practical applications and addressing multiple testing issues. Participants will gain hands-on experience with exploratory data analysis methods, including Principal Component Analysis (PCA) and multi-dimensional scaling, to uncover hidden patterns and reduce dimensionality in data. The course also delves into t-SNE, a powerful technique for visualizing high-dimensional data, and highlights practical applications of both PCA and t-SNE, equipping learners with the skills to analyze and interpret data effectively across various real-world scenarios.</p>
+                <b>Module 2: Network Analysis</b>
+                <p>This module provides a comprehensive introduction to network analysis, focusing on its theoretical foundations and practical applications. Students will learn to represent networks using adjacency matrices and calculate key quantitative measures, including connected components, edge density, degree distribution, network diameter, average path length, and homophily. The curriculum also explores centrality measures such as degree, eigenvector, closeness, and betweenness centrality, which are essential for identifying influential nodes within a network. With hands-on exercises, participants will apply these concepts to real-world scenarios, equipping them with the analytical tools to interpret and leverage network structures effectively.</p>
+                <b>Module 3: Unsupervised Learning</b>
+                <p>Dive into the world of network analysis with this comprehensive course that bridges theory and practice. Begin by mastering network representation through adjacency matrices, a foundational approach to structuring and visualizing networks. Explore quantitative measures, such as connected components, edge density, degree distribution, network diameter, average path length, and homophily, to evaluate network structure and behavior. Delve into centrality measures—including degree, eigenvector, closeness, and betweenness centrality—to identify key nodes and their roles within a network. With practical applications woven throughout, this course equips learners to analyze, interpret, and leverage networks in diverse real-world contexts.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Course 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="course3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#module3" aria-expanded="false" aria-controls="module3">
+              Course 3: Practical Data Science
+            </button>
+          </h2>
+          <div id="module3" class="accordion-collapse collapse" aria-labelledby="course3">
+            <div class="accordion-body">
+                <p class='description'>Welcome to the course on Practical Data Science. This course will introduce you to the techniques developed to build tree-based algorithms such as Decision Trees and Random Forests, along with concepts from the area of Time Series Forecasting.</p>
+                <p class='description'>The primary goal of this course is to understand the working and application of tree-based algorithms like Decision Trees and Random Forests to solve data science problems. We will also focus on common forecasting algorithms used to solve Time Series problems.</p>
+                <!-- Modules -->
+                <b>Module 1: Decision Trees</b>
+                <p>This module provides a comprehensive introduction to decision trees, a versatile and powerful tool in data science and machine learning. Participants will explore the fundamentals of decision tree models, their advantages, and the core concept of classification. The curriculum covers the step-by-step process of building a decision tree from data, evaluating misclassification, and understanding error criteria. Learners will dive into specialized techniques for handling categorical data, defining and optimizing splits using methods like entropy, information gain, and the greedy algorithm. With a focus on practical applications, this course equips participants to effectively apply decision trees to real-world problems, enhancing their analytical capabilities.</p>
+                <b>Module 2: Introduction to Bagging and Random Forests</b>
+                <p>This course offers a deep dive into decision trees, a cornerstone of machine learning and data analysis. Starting with an introduction to decision trees and their unique advantages, participants will learn the fundamental principles of classification and the step-by-step process of constructing decision trees from data. The course addresses key concepts such as misclassification, error criteria, and methods for optimizing splits using entropy, information gain, and greedy algorithms. Special focus is given to handling categorical data and understanding how decision trees adapt to diverse datasets. Through practical applications, learners will gain hands-on experience, equipping them to tackle real-world problems with confidence.</p>
+                <b>Module 3: Time Series</b>
+                <p>This course delves into the fundamentals and practical applications of decision trees, a powerful tool in data science and machine learning. It begins with an introduction to decision trees, exploring their strengths and advantages, followed by the core concepts of classification and the step-by-step process of building a decision tree from data. Key topics include misclassification, error criteria, handling categorical data, and advanced techniques for optimizing splits using entropy, information gain, and greedy algorithms. Through practical applications, participants will gain the skills to design, implement, and interpret decision trees, enabling them to solve complex problems across various domains.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Course 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="course4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#module4" aria-expanded="false" aria-controls="module4">
+              Course 4: Machine Learning
+            </button>
+          </h2>
+          <div id="module4" class="accordion-collapse collapse" aria-labelledby="course4">
+            <div class="accordion-body">
+                <p class='description'>Welcome to the course on Machine Learning. This course will introduce you to the tools and techniques developed to build regression & classification models and their evaluation measures.</p>
+                <p class='description'>The primary goal of this course is to understand classical linear and nonlinear regression for prediction and inferential purposes along with their assumptions. We will also focus on the machine learning algorithms required for solving classification problems.</p>
+                <!-- Modules -->
+                <b>Module 1: Introduction to Supervised Learning: Regression</b>
+                <p>This module provides a solid foundation in statistical methods and their practical applications in data analysis and prediction. Beginning with elementary statistics, participants will explore key concepts such as maximum likelihood and Bayesian estimators to enhance their understanding of statistical inference. The curriculum delves into linear regression, a fundamental tool for modeling relationships between variables. Learners will also gain expertise in performance assessment, including techniques for estimating parameter means and constructing confidence intervals for prediction accuracy. With a focus on practical application, this course equips students with the skills needed to apply statistical methods effectively to real-world problems.</p>
+                <b>Module 2: Model Evaluation, Cross-Validation and Bootstrapping</b>
+                <p>This module explores the foundational principles and practical techniques of predictive modeling and regression analysis. It begins by distinguishing between prediction and modeling, emphasizing the assumptions underlying regression methods. Participants will gain a deep understanding of critical concepts such as overfitting, regularization, and the bias-variance tradeoff, essential for building robust models. The module also introduces advanced validation techniques, including cross-validation and bootstrapping, to ensure model reliability and performance. Through hands-on practical applications, learners will apply these techniques to real-world datasets, enhancing their ability to develop accurate and generalizable predictive models.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Course 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="course5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#module5" aria-expanded="false" aria-controls="module5">
+              Course 5: Deep Learning
+            </button>
+          </h2>
+          <div id="module5" class="accordion-collapse collapse" aria-labelledby="course5">
+            <div class="accordion-body">
+                <p class='description'>Welcome to the course on Deep Learning. This course will introduce you to the tools and techniques developed to solve complex problems using Artificial Neural Networks, and how it works on image data along with its applications in graphs.</p>
+                <p class='description'>The primary goal of this course is to understand various concepts involved in Deep Learning, learn about the problems where Feed-Forward, Convolutional, and Graph Neural Networks find use, and understand how and where to apply these deep learning algorithms.</p>
+                <!-- Modules -->
+                <b>Intro to Deep Learning</b>
+                <p>This module provides a comprehensive introduction to the foundational concepts of neural networks and their practical applications. Beginning with a general overview, it covers the concept of neurons, activation functions, and the role of multiple layers in building complex architectures. Learners will explore key components like cross-entropy loss and gradient descent, essential for optimizing neural networks. The module also introduces basic training algorithms, including stochastic gradient descent (SGD) and minibatch methods, providing a solid foundation for understanding how neural networks learn. Practical applications are integrated throughout, enabling participants to apply these principles to real-world problems effectively.</p>
+                <b>Convolutional Neural Networks</b>
+                <p>This module delves into the fundamentals and practical applications of Convolutional Neural Networks (CNNs), a cornerstone of deep learning for image and spatial data analysis. Participants will explore key concepts such as locality and translation invariance, which enable CNNs to recognize patterns regardless of position. The course covers the mechanics of filters and convolutions, pooling techniques like max-pooling, and the architecture of CNNs. Learners will also gain insights into what CNNs learn through illustrative examples, bridging theory with practice. Hands-on applications round out the module, equipping participants to apply CNNs effectively to solve real-world challenges.</p>
+                <b>Graph Neural Networks</b>
+                <p>This module explores advanced topics in deep learning, focusing on innovative techniques for enhancing model performance and expanding application domains. Participants will begin with the concepts of pre-training, transfer learning, and data augmentation, which enable models to generalize effectively across tasks. The module introduces contrastive learning, a powerful approach for representation learning, and transitions from image-based learning to graph-based learning. Learners will dive into graph convolutions, understanding how these methods adapt deep learning techniques to structured data. With illustrative examples and practical applications, this module equips participants with cutting-edge skills for tackling complex challenges in diverse fields.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Course 6 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="course6">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#module6" aria-expanded="false" aria-controls="module6">
+              Course 6: Recommendation Systems
+            </button>
+          </h2>
+          <div id="module6" class="accordion-collapse collapse" aria-labelledby="course6">
+            <div class="accordion-body">
+                <p class='description'>Welcome to the course on Recommendation Systems. This course will give you an overview of why recommendation systems are now everywhere and some insights into what is required to build a good recommendation system by covering statistical modeling and algorithms.</p>
+                <p class='description'>The primary goal of this course is to recognize the difference between traditional prediction and recommendation systems and understand how to apply various algorithms </p>
+                <!-- Modules -->
+                <b>Intro to Recommendation Systems</b>
+                <p>This module provides a comprehensive introduction to recommendation systems, exploring their purpose and significance in modern data-driven applications. Participants will examine key evaluation metrics and address challenges such as data sparsity. Using real-world datasets like Yelp and Movielens, learners will navigate the modeling process and explore simple yet effective solutions. The module culminates with a focus on content-based recommendation systems, equipping participants with the foundational knowledge and practical skills to build and evaluate personalized recommendation models.</p>
+                <b>Matrix</b>
+                <p>This module focuses on advanced techniques for enhancing recommendation systems, building on foundational concepts to develop more sophisticated solutions. Participants will explore clustering-based recommendation systems and collaborative filtering, two powerful methods for generating personalized suggestions. The course introduces matrix estimation, including techniques like singular value thresholding, and dives into optimization methods using least squares to refine recommendations. Through these advanced approaches, learners will gain the skills to design, implement, and improve recommendation systems for diverse real-world applications.</p>
+                <b>Tensor, NN for Recommendation Systems</b>
+                <p>This module takes a hands-on approach to building and refining recommendation systems through practical projects. Participants will begin by developing a Movie Recommendation System (Part 1), laying the groundwork for personalized suggestions in entertainment. Next, they will design a Yelp Restaurant Recommendation System (Part 1), tailored to real-world scenarios in the food industry. The module advances to Movie Recommendation System (Part 2), introducing enhancements and optimizations, and culminates with the creation of an Amazon Product Recommendation System, showcasing techniques for large-scale e-commerce applications. These projects provide a comprehensive, practical understanding of recommendation system design and implementation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #2A3F54 0%, #0073e6 100%); color: #fff; padding: 30px 20px; position: relative; height: 90px;">
+    <p style="margin: 0;">&copy; 2024 Ted Summey | Erevno</p>
+  </footer>
+
+  <!-- Persistent Back to Portfolio Button -->
+  <a href="/index.html" class="back-to-portfolio">Back to Portfolio</a>
+  
+  
+  
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
