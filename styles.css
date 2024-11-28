@@ -199,6 +199,67 @@ section h2 {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Professional Development Section */
+#professional-development {
+    background-color: #f4f4f4;
+}
+  
+#professional-development h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+  
+#professional-development .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for better focus */
+  gap: 2rem;
+}
+  
+#professional-development .card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+  
+#professional-development .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+  
+#professional-development .cta-btn {
+  background-color: #0073e6;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 50px;
+  display: inline-block;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+  
+#professional-development .cta-btn:hover {
+  background-color: #005bb5;
+  color: #fff;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 2rem; /* Indent the bullets */
+  margin: 1rem 0;
+}
+
+li {
+  margin-bottom: 0.5rem; /* Add spacing between list items */
+  text-align: left; /* Align text to the left */
+}
+
 /* Certifications Section */
 .certifications {
     background-color: #f4f4f4;
@@ -254,6 +315,11 @@ section h2 {
         font-size: 1rem;
     }
 
+    /* Container padding */
+    .container {
+        padding: 0 10px;
+    }
+
     /* Hero Section */
     .hero h1 {
         font-size: 2.5rem;
@@ -263,45 +329,41 @@ section h2 {
         font-size: 1.2rem;
     }
 
-    /* Contact Info Section */
-    .hero .contact-info {
-        font-size: 0.8rem !important; /* Smaller font size */
-        color: white !important; /* Force white text */
-        text-align: center !important; /* Center the text */
-        margin-bottom: 1rem;
-    }
-
-    .hero .contact-info a {
-        color: white !important; /* Force links to be white */
-        text-decoration: none !important; /* Remove underline */
-        margin: 0 0.3rem; /* Add space between links */
-        transition: font-weight 0.3s ease, color 0.3s ease !important; /* Smooth transition */
-    }
-
-    .hero .contact-info a:hover {
-        text-decoration: underline !important; /* Underline on hover */
-    }
-
-    /* Grid Layout for Cards and Boxes */
+    /* Grid Layout */
     .grid {
-        grid-template-columns: 1fr !important; /* Stacks grid items vertically */
-        gap: 1.5rem; /* Adjust gap between stacked items */
+        grid-template-columns: 1fr; /* Stacks grid items vertically */
     }
 
+    /* Trusted By Section */
     .trusted-grid {
-        grid-template-columns: 1fr !important; /* Stacks trusted items vertically */
+        grid-template-columns: 1fr; /* Stacks items in one column */
     }
 
-    /* Cards */
+    /* Cards and Sections */
     .card {
         padding: 1.5rem;
         margin-bottom: 1.5rem;
-        width: 100% !important; /* Ensure cards take up full width */
     }
 
-    /* Organization Logos or Boxes */
     .org {
         padding: 1.5rem;
-        width: 100% !important; /* Ensure boxes take up full width */
+    }
+
+    /* Certifications */
+    .certifications h2 {
+        font-size: 1.5rem;
+    }
+
+    .cert-list li {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact a {
+        font-size: 1rem;
     }
 }
