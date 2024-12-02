@@ -42,6 +42,18 @@ body {
     margin-bottom: 0rem;
 }
 
+/* Contact Info Links */
+.hero .contact-info a {
+    color: white; /* Makes the text white */
+    text-decoration: none; /* Removes the underline */
+    transition: color 0.3s ease; /* Adds a smooth transition for hover effects */
+}
+
+.hero .contact-info a:hover {
+    color: #ffcc00; /* Changes color on hover for visibility */
+    text-decoration: underline; /* Optional: Adds underline on hover for emphasis */
+}
+
 /* Call-to-Action Button */
 .cta-btn {
     background-color: #ffcc00;
@@ -201,4 +213,22 @@ section h2 {
         width: 100%;
         font-size: 0.9rem;
     }
+/* Contact Section Styles */
+.contact .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact a {
+    color: white !important; /* Ensures text is white */
+    text-decoration: none !important; /* Removes underline */
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #ffcc00; /* Optional: Yellow on hover */
+    text-decoration: none !important; /* Still no underline */
+}
+
 }
