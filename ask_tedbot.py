@@ -1,17 +1,19 @@
 import os
-from dotenv import load_dotenv
+from flask import Flask, request, jsonify
 import openai
+from dotenv import load_dotenv
 
-# Load the .env file to get the API key
+# Load environment variables
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
-
 openai.api_key = api_key
 
-def ask_tedbot(prompt):
-    # Context summarizing Ted Summey's bio, career journey, and expertise
-    documents_context = """
-    Ted Summey is a seasoned cybersecurity leader, data scientist, and tech innovator with over 25 years of experience. He combines deep technical expertise with a people-first approach, excelling in AI-driven security solutions, compliance management, and operational optimization.
+# Initialize Flask app
+app = Flask(__name__)
+
+# Context summarizing Ted Summey's bio, career journey, and expertise
+documents_context = """
+Ted Summey is a seasoned cybersecurity leader, data scientist, and tech innovator with over 25 years of experience. He combines deep technical expertise with a people-first approach, excelling in AI-driven security solutions, compliance management, and operational optimization.
 
 Ted’s journey reflects resilience and innovation, shaped by challenges that he transformed into opportunities. From an early fascination with astronomy and programming on a Commodore 64 to leading transformative projects in cybersecurity, data science, and AI, his career is a testament to lifelong learning and adaptability. He has designed enterprise security strategies, automated incident response using advanced AI techniques, and collaborated with federal agencies like DHS, CISA, and the Secret Service to enhance national cybersecurity.
 
@@ -111,22 +113,37 @@ Ted’s professional mantra? **“If it’s broken, fix it. If it’s not, make 
 In his world, there’s no such thing as "good enough." From automating incident responses to transforming boardroom discussions into actionable strategies, Ted’s philosophy emphasizes delivering results that are both impactful and efficient. His ability to bridge the gap between highly technical problems and business priorities is what sets him apart, making him an indispensable force in every professional setting.
 
 This GPT embodies Ted’s extensive knowledge, real-world experience, and results-driven problem-solving style to tackle technical and professional questions with clarity, precision, and just the right amount of wit. After all, getting it done is important, but making it engaging? That’s a Ted specialty.
-    """
-    
-    combined_prompt = f"{documents_context}\nUser's Question: {prompt}"
-    
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[
-            {"role": "system", "content": (
-                "You are Ask_Tedbot, a GPT designed to emulate Ted Summey, his experiences, and professional expertise. "
-                "Answer questions with clarity, precision, and professionalism. Blend humor, wit, and expertise "
-                "to keep responses engaging while providing valuable insights."
-            )},
-            {"role": "user", "content": combined_prompt}
-        ]
-    )
-    return response["choices"][0]["message"]["content"]
+"""
 
-# Test
-print(ask_tedbot("How did your business education impact your career in cybersecurity?"))
+# Flask route for handling chatbot requests
+@app.route("/chat", methods=["POST"])
+def chat():
+    data = request.json  # Get JSON data from the request
+    prompt = data.get("prompt", "")  # Extract the user prompt
+    if not prompt:
+        return jsonify({"error": "Prompt is required"}), 400
+
+    # Combine context with user's question
+    combined_prompt = f"{documents_context}\nUser's Question: {prompt}"
+
+    try:
+        # Use OpenAI API to get a response
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": (
+                    "You are Ask_Tedbot, a GPT designed to emulate Ted Summey, his experiences, and professional expertise. "
+                    "Answer questions with clarity, precision, and professionalism. Blend humor, wit, and expertise "
+                    "to keep responses engaging while providing valuable insights."
+                )},
+                {"role": "user", "content": combined_prompt}
+            ]
+        )
+        chatbot_response = response["choices"][0]["message"]["content"]
+        return jsonify({"response": chatbot_response})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# Run the Flask app
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
