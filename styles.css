@@ -372,4 +372,61 @@ section h2 {
     .contact a {
         font-size: 1rem;
     }
+
+    /* Chatbot Section */
+    .chatbot {
+        background-color: #f9f9f9;
+        padding: 4rem 0;
+        text-align: center;
+    }
+
+    .chatbot h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    .chatbot p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: #555;
+    }
+
+    .chatbot textarea {
+        width: 100%;
+        max-width: 600px;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        resize: none;
+    }
+
+    .chatbot button {
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .chatbot button:hover {
+        background-color: #005bb5;
+    }
+
+    .chatbot-response {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: #333;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: pre-wrap; /* Keeps line breaks in responses */
+        word-wrap: break-word; /* Handles long words */
+    }
 }
