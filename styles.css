@@ -120,8 +120,8 @@ section h2 {
 .download-btn {
     background-color: #0073e6;
     color: white;
-    padding: 0.5rem 1rem; /* Reduce padding for smaller button */
-    font-size: 1rem; /* Reduce font size */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     text-decoration: none;
     border-radius: 50px;
     display: inline-block;
@@ -203,61 +203,50 @@ section h2 {
 #professional-development {
     background-color: #f4f4f4;
 }
-  
+
 #professional-development h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
-  text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
 }
-  
+
 #professional-development .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns for better focus */
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
-  
+
 #professional-development .card {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
 }
-  
+
 #professional-development .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
 }
-  
+
 #professional-development .cta-btn {
-  background-color: #0073e6;
-  color: white;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 50px;
-  display: inline-block;
-  font-weight: 500;
-  margin-top: 1rem;
-  transition: background 0.3s ease;
+    background-color: #0073e6;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
 }
-  
+
 #professional-development .cta-btn:hover {
-  background-color: #005bb5;
-  color: #fff;
-}
-
-ul {
-  list-style-type: disc;
-  padding-left: 2rem; /* Indent the bullets */
-  margin: 1rem 0;
-}
-
-li {
-  margin-bottom: 0.5rem; /* Add spacing between list items */
-  text-align: left; /* Align text to the left */
+    background-color: #005bb5;
+    color: #fff;
 }
 
 /* Certifications Section */
@@ -294,9 +283,9 @@ li {
 }
 
 .contact .container {
-    max-width: 600px; /* Adjust the width of the container */
-    margin: 0 auto; /* Center the container */
-    text-align: left; /* Left-align the text inside the container */
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .contact a {
@@ -331,12 +320,12 @@ li {
 
     /* Grid Layout */
     .grid {
-        grid-template-columns: 1fr; /* Stacks grid items vertically */
+        grid-template-columns: 1fr;
     }
 
     /* Trusted By Section */
     .trusted-grid {
-        grid-template-columns: 1fr; /* Stacks items in one column */
+        grid-template-columns: 1fr;
     }
 
     /* Cards and Sections */
@@ -347,6 +336,23 @@ li {
 
     .org {
         padding: 1.5rem;
+    }
+
+    /* Professional Development Section */
+    #professional-development .grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+        gap: 1rem;
+    }
+
+    #professional-development .card {
+        padding: 1rem;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    #professional-development .cta-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem;
     }
 
     /* Certifications */
