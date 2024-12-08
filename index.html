@@ -510,6 +510,17 @@
         padding: 0.5rem; /* Slightly reduce padding */
     }
 }
+
+@media screen and (max-width: 768px) {
+    #professional-development .grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1rem; /* Adjust spacing between cards */
+    }
+
+    #professional-development .card {
+        text-align: center; /* Center-align content for better presentation */
+    }
+}
 </style>
 </head>
 <body>
@@ -582,15 +593,13 @@
         <div class="container">
             <h2>AI - Professional Development</h2>
             <div class="grid">
-                <!-- MIT Advanced Data Science Program -->
-                 <div class="card">
+                <div class="card">
                     <h3>MIT Advanced Data Science Program</h3>
                     <p>
                         Completed a 6-month program covering 100+ topics and 25+ projects, including machine learning, deep learning, and recommendation systems, with real-world applications in healthcare and finance.
                     </p>
                     <a href="subpages/MIT/MIT-ADS-Details.html" class="cta-btn" target="_blank">Learn More</a>
                 </div>
-                <!-- Kaggle & Google 5-Day Generative AI Intensive -->
                 <div class="card">
                     <h3>Kaggle & Google 5-Day Generative AI Intensive</h3>
                     <p>
