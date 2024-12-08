@@ -423,6 +423,93 @@
     text-align: left;
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 1rem; /* Add side padding for better spacing */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Reduce title size */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    .cta-btn {
+        font-size: 0.9rem; /* Scale down button size */
+        padding: 0.4rem 0.8rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .trusted-grid {
+        grid-template-columns: 1fr; /* Adjust "Trusted By" layout */
+    }
+
+    .chat-button {
+        bottom: 10px; /* Adjust chatbot position */
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .about p,
+    .competencies p {
+        font-size: 1rem; /* Reduce paragraph text size */
+    }
+
+    .certifications .cert-list {
+        padding-left: 1rem; /* Add padding for bullets on mobile */
+    }
+
+    .projects .grid,
+    .trusted-grid {
+        gap: 1rem; /* Reduce spacing between cards */
+    }
+
+    .container {
+        padding: 0 1rem; /* Add horizontal padding */
+    }
+
+    /* Footer */
+    footer.contact {
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center;
+    }
+}
+
+/* For very small devices (e.g., phones) */
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem; /* Further reduce font size */
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .grid {
+        gap: 1rem; /* Adjust spacing */
+    }
+
+    .chat-button {
+        font-size: 12px; /* Adjust button font size */
+    }
+
+    .about h2,
+    .competencies h2,
+    .projects h2 {
+        font-size: 1.5rem; /* Smaller section headers */
+    }
+
+    .container {
+        padding: 0.5rem; /* Slightly reduce padding */
+    }
+}
 </style>
 </head>
 <body>
