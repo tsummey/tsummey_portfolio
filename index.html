@@ -99,16 +99,16 @@
         fill: white;
     }
     
-      .chatbot-interface {
+     .chatbot-interface {
         position: fixed;
         bottom: 0;
         right: 0;
-        width: 0;
-        height: 0;
+        width: 0; /* Initially hidden */
+        height: 0; /* Initially hidden */
         background-color: #f4f4f4;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
         overflow: hidden;
-        transition: width 0.3s ease;
+        transition: width 0.3s ease, height 0.3s ease; /* Smooth transitions */
         z-index: 1000;
         display: flex;
         flex-direction: column;
