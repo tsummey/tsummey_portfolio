@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ted Summey - Cybersecurity & AI Leader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section: Hero -->
+    <header class="hero">
+        <div class="container">
+            <h1>Ted Summey</h1>
+            <p>Cybersecurity Leader | Architect | AI & Data Science Expert</p>
+            <p class="contact-info">
+                <a href="mailto:tsummey@tsummey.com">Email</a> | 
+                <a href="https://www.linkedin.com/in/tedsummey" target="_blank">LinkedIn</a> | 
+                <a href="https://your-portfolio-link.com" target="_blank">Portfolio</a> | 
+                <a href="tsummey-detail-resume.pdf" target="_blank">Resume</a>
+            </p>
+            <a href="#competencies" class="cta-btn">Discover More</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I’m a cybersecurity leader with 25+ years of experience, specializing in high-impact security solutions for top organizations like Apple, Disney, Wells Fargo, and the Department of Homeland Security (DHS). My expertise includes incident response, threat intelligence, AI-driven security strategies, and cloud architecture.
+            </p>
+            <p>
+                I’ve led national and enterprise-wide initiatives, including fortifying national cybersecurity with CISA and DHS, while driving security overhauls at Fortune 500 companies. By integrating AI automation, I’ve enhanced threat detection and response capabilities, helping organizations mitigate risks faster and more efficiently.
+            </p>
+            <p>
+                With a deep technical background and executive leadership, I deliver scalable solutions that ensure security, business continuity, and compliance across industries.
+            </p>
+        </div>
+    </section>
+    
+     <!-- Skills Section -->
+     <section id="competencies" "skills" class="skills">
+        <div class="container">
+            <h2>Key Competencies</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>AI & Machine Learning</h3>
+                    <p>Python, OpenAI, Azure AI, Model Training</p>
+                </div>
+                <div class="card">
+                    <h3>Cloud Architecture</h3>
+                    <p>AWS, Azure, Google Cloud, DevOps Automation</p>
+                </div>
+                <div class="card">
+                    <h3>Cybersecurity Leadership</h3>
+                    <p>Zero Trust Architecture (NIST, ISO 27001, CIS, SOC 2, FedRAMP)</p>
+                </div>
+                <div class="card">
+                    <h3>Regulatory Compliance Leadership</h3>
+                    <p>Expert in Compliance (HIPAA, PCI-DSS, GDPR).</p>
+                </div>
+                <div class="card">
+                    <h3>Cross-Functional Leadership</h3>
+                    <p>Cross-Functional Leadership & Team Collaboration</p>
+                </div>
+                <div class="card">
+                    <h3>Business Strategy</h3>
+                    <p>Aligning teams and products with business goals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="professional-development" class="projects">
+        <div class="container">
+            <h2>AI - Professional Development</h2>
+            <div class="grid">
+                <!-- MIT Advanced Data Science Program -->
+                 <div class="card">
+                    <h3>MIT Advanced Data Science Program</h3>
+                    <p>
+                        Completed a 6-month program covering 100+ topics and 25+ projects, including machine learning, deep learning, and recommendation systems, with real-world applications in healthcare and finance.
+                    </p>
+                    <a href="subpages/MIT/MIT-ADS-Details.html" class="cta-btn" target="_blank">Learn More</a>
+                </div>
+                <!-- Kaggle & Google 5-Day Generative AI Intensive -->
+                <div class="card">
+                    <h3>Kaggle & Google 5-Day Generative AI Intensive</h3>
+                    <p>
+                        Explored foundational and advanced generative AI topics, including LLMs, embeddings, AI agents, and MLOps, through guided learning and hands-on projects.
+                    </p>    
+                    <a href="subpages/Kaggle/Kaggle-GenAI-Details.html" class="cta-btn" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Selected Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Global MDR/XDR Enhancement</h3>
+                    <p>Increased threat detection by 30% and reduced response times by 40% while optimizing AWS resources, resulting in $12K monthly savings.</p>
+                </div>
+                <div class="card">
+                    <h3>Azure AI Integration</h3>
+                    <p>Developed AI-driven automation for cloud detection and response, building a foundation for future enterprise-level AI integrations.</p>
+                </div>
+                <div class="card">
+                    <h3>OpenAI & Llama Models</h3>
+                    <p>Led AI model implementations using GPT and Llama for enterprise threat intelligence and incident response systems, increasing detection accuracy by 25%.</p>
+                </div>
+                <div class="card">
+                    <h3>Fortified National Cybersecurity</h3>
+                    <p>Partnered with DHS and CISA to enhance compliance and improve threat intelligence through a national data-sharing framework.</p>
+                </div>
+                <div class="card">
+                    <h3>BlueLeaks Breach Response & Mitigation</h3>
+                    <p>Led breach response for Nevada law enforcement, delivering intelligence and mitigating threats with DHS and CISA.</p>
+                </div>
+                <div class="card">
+                    <h3>Command-and-Control Attack Response</h3>
+                    <p>Led response to a university cyberattack, securing systems, implementing MFA, and enforcing stricter protocols to prevent further breaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section id="trusted" class="trusted">
+        <div class="container">
+            <h2>Trusted by Leading Organizations</h2>
+            <div class="grid trusted-grid">
+                <div class="org">Apple</div>
+                <div class="org">Disney Interactive</div>
+                <div class="org">Dreamworks</div>
+                <div class="org">Wells Fargo</div>
+                <div class="org">DoD</div>
+                <div class="org">DHS</div>
+                <div class="org">US Secret Service</div>
+                <div class="org">Mattel</div>
+                <div class="org">Adobe</div>
+                <div class="org">GoPro</div>
+                <div class="org">Yahoo</div>
+                <div class="org">Zappos</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <ul class="cert-list">
+                <li>AWS Certified Cloud Practitioner</li>
+                <li>Microsoft Certified: Azure Fundamentals</li>
+                <li>Microsoft Certified: AI & Security Fundamentals</li>
+                <li>MIT Professional Education: Data Science & AI</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Chatbot Button -->
+    <button id="chatbot-toggle" class="chatbot-toggle">💬 Chat</button>
+    
+    <!-- Chatbot Section -->
+    <div id="chatbot-container" class="chatbot-container hidden">
+        <div class="chatbot-header">
+            <h2>Ask Tedbot</h2>
+            <button id="chatbot-close" class="chatbot-close">&times;</button>
+        </div>
+        <div class="chatbox">
+            <div class="messages" id="chatbot-messages"></div>
+            <div class="chat-input-container">
+                <textarea id="chatbot-input" placeholder="Type your question here..."></textarea>
+                <button id="chatbot-submit" class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer class="contact">
+        <div class="container">
+            <p>&copy; 2024 Ted Summey. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const toggleButton = document.getElementById("chatbot-toggle");
+        const chatbotContainer = document.getElementById("chatbot-container");
+        const closeButton = document.getElementById("chatbot-close");
+    
+        // Open the chatbot
+        toggleButton.addEventListener("click", () => {
+            chatbotContainer.classList.remove("hidden");
+            chatbotContainer.classList.add("visible");
+        });
+    
+        // Close the chatbot
+        closeButton.addEventListener("click", () => {
+            chatbotContainer.classList.remove("visible");
+            chatbotContainer.classList.add("hidden");
+        });
+    
+        // Handle chatbot interactions
+        document.getElementById("chatbot-submit").addEventListener("click", async () => {
+            const inputField = document.getElementById("chatbot-input");
+            const messagesDiv = document.getElementById("chatbot-messages");
+            const userInput = inputField.value.trim();
+    
+            if (!userInput) {
+                alert("Please enter a question.");
+                return;
+            }
+    
+            // Add user message to the chat
+            const userMessage = document.createElement("div");
+            userMessage.classList.add("user");
+            userMessage.textContent = userInput;
+            messagesDiv.appendChild(userMessage);
+    
+            // Clear input field
+            inputField.value = "";
+    
+            // Scroll to the latest message
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    
+            // Show "thinking" message
+            const botThinkingMessage = document.createElement("div");
+            botThinkingMessage.classList.add("bot");
+            botThinkingMessage.textContent = "Thinking...";
+            messagesDiv.appendChild(botThinkingMessage);
+    
+            try {
+                const response = await fetch("https://tsummey-portfolio.onrender.com/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ prompt: userInput })
+                });
+    
+                const data = await response.json();
+                botThinkingMessage.remove(); // Remove "thinking" message
+    
+                const botMessage = document.createElement("div");
+                botMessage.classList.add("bot");
+                botMessage.textContent = data.response || "I'm sorry, I couldn't understand that.";
+                messagesDiv.appendChild(botMessage);
+    
+                // Scroll to the latest message
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            } catch (error) {
+                botThinkingMessage.remove(); // Remove "thinking" message
+    
+                const botMessage = document.createElement("div");
+                botMessage.classList.add("bot");
+                botMessage.textContent = "Failed to connect to the chatbot. Please try again later.";
+                messagesDiv.appendChild(botMessage);
+    
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
