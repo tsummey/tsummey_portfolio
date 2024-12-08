@@ -10,6 +10,7 @@ openai.api_key = api_key
 
 # Initialize Flask app
 app = Flask(__name__)
+CORS(app)
 
 # Context summarizing Ted Summey's bio, career journey, and expertise
 documents_context = """
