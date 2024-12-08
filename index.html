@@ -521,6 +521,25 @@
         text-align: center; /* Center-align content for better presentation */
     }
 }
+
+@media screen and (max-width: 768px) {
+    .chatbot-interface {
+        width: 90% !important; /* Expand to 90% of the screen width */
+        bottom: 0; /* Ensure it's pinned to the bottom */
+        right: 5%; /* Center it horizontally */
+        left: 5%; /* Add margin from both sides */
+        border-radius: 15px; /* Add rounded corners for a polished look */
+    }
+
+    .chatbot-header, .chatbot-footer {
+        font-size: 1rem; /* Adjust font sizes for better readability */
+    }
+
+    .chatbot-content {
+        padding: 15px; /* Add extra padding for spacing */
+    }
+}
+
 </style>
 </head>
 <body>
