@@ -120,15 +120,21 @@ This GPT embodies Ted’s extensive knowledge, real-world experience, and result
 # Flask route for handling chatbot requests
 @app.route("/chat", methods=["POST"])
 def chat():
-    data = request.json  # Get JSON data from the request
-    prompt = data.get("prompt", "")  # Extract the user prompt
-    if not prompt:
-        return jsonify({"error": "Prompt is required"}), 400
-
-    # Combine context with user's question
-    combined_prompt = f"{documents_context}\nUser's Question: {prompt}"
-
     try:
+        data = request.json  # Get JSON data from the request
+        app.logger.debug(f"Received request data: {data}")  # Log the received data
+
+        # Validate the presence of the 'prompt' key
+        if not data or 'prompt' not in data:
+            return jsonify({"error": "Invalid request. 'prompt' key is missing or empty"}), 400
+
+        prompt = data.get("prompt", "").strip()
+        if not prompt:
+            return jsonify({"error": "Prompt cannot be empty"}), 400
+
+        # Combine context with user's question
+        combined_prompt = f"{documents_context}\nUser's Question: {prompt}"
+
         # Use OpenAI API to get a response
         response = openai.ChatCompletion.create(
             model="gpt-4",
@@ -144,6 +150,7 @@ def chat():
         chatbot_response = response["choices"][0]["message"]["content"]
         return jsonify({"response": chatbot_response})
     except Exception as e:
+        app.logger.error(f"Error processing request: {e}")  # Log the error
         return jsonify({"error": str(e)}), 500
 
 # Run the Flask app
