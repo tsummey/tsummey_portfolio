@@ -736,11 +736,15 @@
         const apiUrl = 'https://tsummey-portfolio.onrender.com/chat'; // Your Render API endpoint
       
         chatButton.addEventListener('click', () => {
-          chatbotInterface.classList.add('open');
+            chatbotInterface.style.width = '90%'; // Adjust width for mobile
+            chatbotInterface.style.height = '80%'; // Adjust height for visibility
+            chatbotInterface.style.right = '5%'; // Center for mobile
+            chatbotInterface.style.bottom = '5%'; // Adjust bottom margin
         });
       
         closeButton.addEventListener('click', () => {
-          chatbotInterface.classList.remove('open');
+            chatbotInterface.style.width = '0'; // Collapse the width to hide
+            chatbotInterface.style.height = '0'; // Collapse the height to hide
         });
       
         sendButton.addEventListener('click', async () => {
