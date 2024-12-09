@@ -17,13 +17,14 @@
     .hero {
         background: linear-gradient(135deg, #2A3F54 0%, #0073e6 100%);
         color: #fff;
-        padding: 6rem 0;
+        padding: 2rem 0;
         text-align: center;
     }
 
     .hero h1 {
         font-size: 4rem;
         font-weight: 500;
+        margin-top: 0;
         margin-bottom: 0rem !important; /* Bring contact info closer to Ted Summey */
         color: white;
     }
@@ -99,9 +100,9 @@
         fill: white;
     }
     
-     .chatbot-interface {
+    .chatbot-interface {
         position: fixed;
-        bottom: 0;
+        bottom: 5%; /* Properly defined with a unit */
         right: 0;
         width: 0; /* Initially hidden */
         height: 0; /* Initially hidden */
@@ -112,6 +113,7 @@
         z-index: 1000;
         display: flex;
         flex-direction: column;
+        border-radius: 10px; /* Rounded corners */
     }
     
       .chatbot-header {
@@ -737,15 +739,31 @@
         const apiUrl = 'https://tsummey-portfolio.onrender.com/chat'; // Your Render API endpoint
       
         chatButton.addEventListener('click', () => {
-            chatbotInterface.style.width = '90%'; // Adjust width for mobile
-            chatbotInterface.style.height = '80%'; // Adjust height for visibility
-            chatbotInterface.style.right = '5%'; // Center for mobile
-            chatbotInterface.style.bottom = '5%'; // Adjust bottom margin
+            const isMobile = window.innerWidth <= 768; // Check if the screen width is less than or equal to 768px
+            
+            if (isMobile) {
+                // Styles for mobile devices
+                chatbotInterface.style.width = '90%';
+                chatbotInterface.style.height = '80%';
+                chatbotInterface.style.right = '5%'; // Center horizontally
+                chatbotInterface.style.left = '5%'; // Add left margin
+                chatbotInterface.style.bottom = '5%'; // Add bottom margin
+            } else {
+                // Styles for non-mobile devices
+                chatbotInterface.style.width = '30%';
+                chatbotInterface.style.height = '80%';
+                chatbotInterface.style.right = '0'; // Align to the right
+                chatbotInterface.style.left = 'auto'; // Remove any left alignment
+                chatbotInterface.style.bottom = '5%'; // Add bottom margin
+            }
+            chatbotInterface.classList.add('open'); // Add the open class for other styles, if needed
         });
       
         closeButton.addEventListener('click', () => {
-            chatbotInterface.style.width = '0'; // Collapse the width to hide
-            chatbotInterface.style.height = '0'; // Collapse the height to hide
+            // Reset styles to collapse the chatbot
+            chatbotInterface.style.width = '0';
+            chatbotInterface.style.height = '0';
+            chatbotInterface.classList.remove('open');
         });
       
         sendButton.addEventListener('click', async () => {
