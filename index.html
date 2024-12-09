@@ -140,6 +140,38 @@
         overflow-y: auto;
         text-align: left;
     }
+
+    /* Chat Message Bubbles */
+    .chatbot-content .message {
+        max-width: 80%; /* Limit the width of the message bubble */
+        padding: 10px 15px;
+        margin: 10px;
+        border-radius: 15px; /* Rounded corners for the bubbles */
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    /* User message bubble */
+    .chatbot-content .user-message {
+        background-color: #d1e7ff; /* Light blue background */
+        color: #000; /* Black text color */
+        align-self: flex-end; /* Align to the right */
+    }
+
+    /* Bot message bubble */
+    .chatbot-content .bot-message {
+        background-color: #f4f4f4; /* Light gray background */
+        color: #333; /* Darker text color */
+        align-self: flex-start; /* Align to the left */
+    }
+
+    /* Flex container for chat messages */
+    .chatbot-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     
       .chatbot-footer {
         padding: 10px;
@@ -710,12 +742,12 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M12 3C6.48 3 2 6.58 2 11c0 2.08 1.06 3.97 2.82 5.43L4 20l3.74-1.55c1.07.36 2.23.55 3.46.55 5.52 0 10-3.58 10-8s-4.48-8-10-8zm0 14c-1.05 0-2.05-.16-2.97-.46L6 17l.81-2.46C5.44 13.67 4 12.04 4 11c0-3.03 3.58-6 8-6s8 2.97 8 6-3.58 6-8 6z"/>
         </svg>
-        <span>Ask Tedbot</span>
+        <span>Ask Ted! Chatbot</span>
       </button>
       
       <div class="chatbot-interface" id="chatbotInterface">
         <div class="chatbot-header">
-          <span>Tedbot</span>
+          <span>Ask Ted! Chatbot</span>
           <button id="closeButton">&times;</button>
         </div>
         <div class="chatbot-content" id="chatbotContent">
@@ -735,12 +767,12 @@
         const sendButton = document.getElementById('sendButton');
         const chatInput = document.getElementById('chatInput');
         const chatbotContent = document.getElementById('chatbotContent');
-      
+    
         const apiUrl = 'https://tsummey-portfolio.onrender.com/chat'; // Your Render API endpoint
-      
+    
         chatButton.addEventListener('click', () => {
             const isMobile = window.innerWidth <= 768; // Check if the screen width is less than or equal to 768px
-            
+    
             if (isMobile) {
                 // Styles for mobile devices
                 chatbotInterface.style.width = '90%';
@@ -758,55 +790,74 @@
             }
             chatbotInterface.classList.add('open'); // Add the open class for other styles, if needed
         });
-      
+    
         closeButton.addEventListener('click', () => {
             // Reset styles to collapse the chatbot
             chatbotInterface.style.width = '0';
             chatbotInterface.style.height = '0';
             chatbotInterface.classList.remove('open');
         });
-      
-        sendButton.addEventListener('click', async () => {
-          const userMessage = chatInput.value.trim();
-          if (!userMessage) return;
-      
-          // Display the user's message in the chat
-          const userMessageElem = document.createElement('p');
-          userMessageElem.textContent = `You: ${userMessage}`;
-          userMessageElem.classList.add('user-message');
-          chatbotContent.appendChild(userMessageElem);
-      
-          // Clear the input
-          chatInput.value = '';
-      
-          // Send the message to the API
-          try {
-            const response = await fetch(apiUrl, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ prompt: userMessage }),
-            });
-      
-            if (!response.ok) {
-              throw new Error('Failed to connect to the chatbot API');
+    
+        async function sendMessage() {
+            const userMessage = chatInput.value.trim();
+            if (!userMessage) return;
+    
+            // Create a container for the user's message
+            const userMessageElem = document.createElement('div');
+            userMessageElem.textContent = userMessage;
+            userMessageElem.classList.add('message', 'user-message'); // Add both message and user-message classes
+            chatbotContent.appendChild(userMessageElem);
+    
+            // Scroll to the bottom
+            chatbotContent.scrollTop = chatbotContent.scrollHeight;
+    
+            // Clear the input
+            chatInput.value = '';
+    
+            // Send the message to the API
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: userMessage }),
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Failed to connect to the chatbot API');
+                }
+    
+                const data = await response.json();
+    
+                // Create a container for the bot's message
+                const botMessageElem = document.createElement('div');
+                botMessageElem.textContent = data.response;
+                botMessageElem.classList.add('message', 'bot-message'); // Add both message and bot-message classes
+                chatbotContent.appendChild(botMessageElem);
+    
+                // Scroll to the bottom
+                chatbotContent.scrollTop = chatbotContent.scrollHeight;
+            } catch (error) {
+                const errorMessageElem = document.createElement('div');
+                errorMessageElem.textContent = 'Tedbot: Sorry, something went wrong!';
+                errorMessageElem.classList.add('message', 'bot-message');
+                chatbotContent.appendChild(errorMessageElem);
+                console.error('Error:', error); // Log the error for debugging
             }
-      
-            const data = await response.json();
-      
-            // Display the chatbot's response
-            const botMessageElem = document.createElement('p');
-            botMessageElem.textContent = `Tedbot: ${data.response}`;
-            botMessageElem.classList.add('bot-message');
-            chatbotContent.appendChild(botMessageElem);
-          } catch (error) {
-            const errorMessageElem = document.createElement('p');
-            errorMessageElem.textContent = 'Tedbot: Sorry, something went wrong!';
-            errorMessageElem.classList.add('bot-message');
-            chatbotContent.appendChild(errorMessageElem);
-            console.error('Error:', error); // Log the error for debugging
-          }
+        }
+    
+        // Attach event listener for "Send" button click
+        sendButton.addEventListener('click', sendMessage);
+    
+        // Attach event listener for "Enter" and "Shift+Enter" key handling
+        chatInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                if (!event.shiftKey) {
+                    event.preventDefault(); // Prevent adding a newline
+                    sendMessage(); // Call sendMessage function
+                }
+            }
         });
-      </script>
+    </script>    
 
 </body>
 </html>
