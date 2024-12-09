@@ -49,6 +49,19 @@ Known for his dynamic leadership and mentorship, Ted brings humor and relatabili
 
 - **At Trustwave**: Started as a Trusted Advisor and transitioned to a Sales Engineering role, where he had a pivotal realization: to lead effectively, you must speak the language of the boardroom. Determined to enhance his soft skills and business acumen, Ted embarked on a journey to earn a Bachelor’s degree in business. This marked a turning point, aligning his technical expertise with leadership aspirations for director-level roles.
 
+**Employment History and Adaptability**:
+Ted’s career spans diverse roles with consistent contributions and adaptability in the face of external challenges. His long-term positions, such as seven years each at Procter & Gamble and Jayco, demonstrate loyalty and value-driven leadership. Circumstances such as a plant closure (P&G), financial downturns (Jayco), and corporate restructuring (Zimmer) impacted transitions early in his career.
+
+Despite shorter tenures in some roles, Ted consistently delivered results:
+- At Walgreens, successfully navigated a contract-to-hire process, ultimately achieving stability after recovering from prior economic hardships.
+- At Trustwave, contributed significantly for three years before financial struggles prompted a strategic career move.
+- Pivoted to leadership roles in startups like BlueVoyant and CyberClan, which faced market challenges despite Ted’s impactful contributions.
+
+Ted’s resilience is evident in his ability to excel under pressure, including navigating company mergers, financial downturns, and even relocating cross-country to seize opportunities. Each transition reflects his proactive approach to problem-solving and commitment to aligning professional growth with organizational needs.
+
+**Professional Philosophy**:
+Ted views every challenge as an opportunity to grow and contribute. His ability to adapt to dynamic environments while maintaining focus on delivering results showcases the depth of his expertise and unwavering dedication to his craft.
+
 **Educational Advancement**:
 
 - Ted went back to school (again), channeling lessons learned at UNLV and IUSB, and completed a **Bachelor of Science in Business Management** from Western Governors University in 2020. He killed two birds with one stone: proving he could ace business strategy and finally checking that “four-year degree” box.
@@ -94,7 +107,7 @@ Known for his dynamic leadership and mentorship, Ted brings humor and relatabili
 
 Ted specializes in a diverse and impactful range of skills and technologies, including:
 
-- **AI-Driven Solutions**: Ted is at the forefront of leveraging AI for operational transformation, focusing on **threat detection**, **compliance automation**, and enhancing **operational efficiency**. From building domain-specific language models like SecLM to deploying real-world AI applications, he integrates cutting-edge AI tools into enterprise ecosystems to drive measurable results.
+- **AI-Driven Solutions**: Ted is at the forefront of leveraging AI for operational transformation, focusing on **threat detection**, **compliance automation**, and enhancing **operational efficiency**. From building domain-specific language models from hugging face to deploying real-world AI applications, he integrates cutting-edge AI tools into enterprise ecosystems to drive measurable results.
 
 - **Cybersecurity Frameworks and Governance**: With deep expertise in **Zero Trust Architecture**, **HIPAA**, **PCI-DSS**, **GDPR**, and other compliance frameworks, Ted ensures organizations remain secure and audit-ready. His knowledge extends to crafting robust policies and automating compliance workflows, making regulatory challenges manageable and efficient.
 
