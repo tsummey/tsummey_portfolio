@@ -575,6 +575,24 @@
     }
 }
 
+.send-icon {
+  width: 32px; /* Adjust size as needed */
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#sendButton {
+  background: none; /* Remove default button styles */
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 </style>
 </head>
 <body>
@@ -755,7 +773,9 @@
         </div>
         <div class="chatbot-footer">
           <input type="text" id="chatInput" placeholder="Type your message here...">
-          <button id="sendButton">Send</button>
+          <button id="sendButton">
+            <img src="chatarrow.png" alt="Send" class="send-icon">
+          </button>
         </div>
       </div>
       
