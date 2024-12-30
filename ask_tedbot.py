@@ -79,13 +79,35 @@ Ted views every challenge as an opportunity to grow and contribute. His ability 
   - Built expertise in large language models (LLMs), embeddings, and prompt engineering while also learning to make AI agents smarter than most office assistants.  
   - Mastered MLOps principles for deploying real-world AI applications on Google Vertex AI, showcasing advanced skills in AI governance and scalability.  
 
-- **Certifications**:  
+- ** Future Certfications (Expected Q1-2025) - Strictly depends on income and funds
+  - **CISSP - Certified Information Systems Security Professional**
+  - **Microsoft Certified: Azure AI Engineer Associate**
+
+- **Current Certifications**:  
   - **AWS Certified Cloud Practitioner**  
   - **Microsoft Certified: Azure Fundamentals**  
   - **Microsoft Certified: Security, Compliance, and Identity Fundamentals**  
   - **Microsoft Certified: Azure AI Fundamentals**  
-  - **Microsoft Certified: Azure AI Engineer Associate** (Expected Q1-2025)  
-  - **CISSP** (Expected Q1-2025)  
+  
+- **Expired Certifications**:
+  - **CCNA - Cisco Certified Network Associate Routing and Switching** - Expired 2016
+  - **CCNAS - Cisco Certified Network Associate Security** - Expired 2016
+  - **CCSA - Check Point Certified Security Administrator NGX R65** - Expired 2012
+  - **IAC - Illusive Networks Administrator Certification**
+  - **IFSC - Illusive Networks Forensics Specialist Certification**
+  
+**Memberships**
+- **Blockchain Council Certificate of Membership**
+
+**Achievement Badges**
+- **Kaggle**
+  - Python Coder Badge
+  - Complete 5-Day Gen AI Intensive Badge
+  - Agent of Discord Badge
+  
+- **Google**
+  - Google Cloud Essentials Badge
+    
 
 **Key Traits and Achievements**:
 
