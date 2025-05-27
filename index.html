@@ -1,883 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ted Summey Portfolio</title>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ted Summey | Cybersecurity Executive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="Ted Summey | Cybersecurity Executive, CISO/CTO Advisor, Solutions Engineer, and Strategic Leader supporting Fortune 500s and Federal Agencies.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
     body {
-        font-family: 'Roboto', sans-serif;
-        color: #333;
-        line-height: 1.7;
-        background-color: whitesmoke;
-        margin: 0;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #1e1e1e;
+      line-height: 1.6;
     }
 
-    /* Hero Section */
-    .hero {
-        background: linear-gradient(135deg, #2A3F54 0%, #0073e6 100%);
-        color: #fff;
-        padding: 2rem 0;
-        text-align: center;
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
     }
 
-    .hero h1 {
-        font-size: 4rem;
-        font-weight: 500;
-        margin-top: 0;
-        margin-bottom: 0rem !important; /* Bring contact info closer to Ted Summey */
-        color: white;
-    }
-    
-    .hero p {
-        font-size: 1.25rem;
-        margin-top: 0rem !important;
-        margin-bottom: 0rem;
-        color: white;
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 600;
     }
 
-    /* Formats the contact info in the header */
-    .hero .contact-info {
-        font-size: 0.9rem !important; /* Smaller font size */
-        color: white !important; /* Force the font color to white */
-        text-align: center !important; /* Center the text */
-        margin-top: 0.25rem !important; /* Bring it closer to "Ted Summey" */
-        margin-bottom: 1rem !important; /* Adjust bottom spacing */
-    }
-    
-    .hero .contact-info a {
-        color: white !important; /* Force links to be white */
-        text-decoration: none !important; /* Remove underline */
-        margin: 0 0.3rem !important; /* Add some space between links */
-        transition: font-weight 0.3s ease, color 0.3s ease !important; /* Smooth transition */
-    }
-    
-    .hero .contact-info a:hover {
-        font-weight: normal !important; /* Make the text bold on hover */
-        text-decoration: underline !important; /* Underline on hover */
+    header p {
+      margin: 0.5rem 0 1.2rem;
+      font-size: 1.25rem;
+      font-weight: 400;
     }
 
-    /* Discover More Button */
-    .cta-btn {
-        background-color: #ffcc00;
-        color: #333;
-        padding: .5rem 1rem;
-        font-size: 1rem;
-        text-decoration: none;
-        border-radius: 50px;
-        margin-top: 2rem;
-        display: inline-block;
-        font-weight: 500;
-        transition: background 0.3s ease;
+    .contact-links {
+      font-size: 1rem;
     }
 
-    .cta-btn:hover {
-        background-color: #0073e6;
-        color: white;
+    .contact-links a {
+      color: #ffcc00;
+      margin: 0 0.6rem;
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    /* Chatbot */
-    .chat-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 30px;
-        padding: 10px 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        font-size: 16px;
-        gap: 10px;
-    }
-    
-      .chat-button svg {
-        width: 24px;
-        height: 24px;
-        fill: white;
-    }
-    
-    .chatbot-interface {
-        position: fixed;
-        bottom: 5%; /* Properly defined with a unit */
-        right: 0;
-        width: 0; /* Initially hidden */
-        height: 0; /* Initially hidden */
-        background-color: #f4f4f4;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        transition: width 0.3s ease, height 0.3s ease; /* Smooth transitions */
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        border-radius: 10px; /* Rounded corners */
-    }
-    
-      .chatbot-header {
-        background-color: #007bff;
-        color: #fff;
-        padding: 10px;
-        font-size: 18px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-      .chatbot-header button {
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 20px;
-        cursor: pointer;
-    }
-    
-      .chatbot-content {
-        flex-grow: 1;
-        padding: 20px;
-        overflow-y: auto;
-        text-align: left;
+    nav.sidebar {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: #203a43;
+      padding: 1rem;
+      border-radius: 0 5px 5px 0;
+      z-index: 1000;
     }
 
-    /* Chat Message Bubbles */
-    .chatbot-content .message {
-        max-width: 80%; /* Limit the width of the message bubble */
-        padding: 10px 15px;
-        margin: 10px;
-        border-radius: 15px; /* Rounded corners for the bubbles */
-        display: inline-block;
-        font-size: 14px;
-        line-height: 1.4;
+    nav.sidebar a {
+      display: block;
+      color: white;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
     }
 
-    /* User message bubble */
-    .chatbot-content .user-message {
-        background-color: #d1e7ff; /* Light blue background */
-        color: #000; /* Black text color */
-        align-self: flex-end; /* Align to the right */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      border-bottom: 1px solid #ddd;
     }
 
-    /* Bot message bubble */
-    .chatbot-content .bot-message {
-        background-color: #f4f4f4; /* Light gray background */
-        color: #333; /* Darker text color */
-        align-self: flex-start; /* Align to the left */
+    section:not(:first-of-type) {
+      padding-top: 1.5rem;
     }
 
-    /* Flex container for chat messages */
-    .chatbot-content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-      .chatbot-footer {
-        padding: 10px;
-        background: #eee;
-        display: flex;
-        gap: 10px;
-    }
-    
-      .chatbot-footer input {
-        flex-grow: 1;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    
-      .chatbot-footer button {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-      .open {
-        width: 30%;
-    }
-    
-      /* Style for bot and user messages */
-      .bot-message {
-        color: #007bff; /* Contrasting color for Tedbot */
-        font-weight: standard;
-    }
-    
-      .user-message {
-        color: #000; /* Default black for user */
-    }
-    
-    /* About Section */
-    .about h2 {
-      font-size: 2.5rem;
-      text-align: center;  
-    }
-    
-    .about p {
-        font-size: 1.2rem;
-        max-width: 900px;
-        margin: 1rem auto;
-        color: #555;
-        text-align: justified;
+    h2 {
+      text-align: center;
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #203a43;
     }
 
-    /* Resume Download Section */
-    .resume-download {
-        padding: 4rem 0;
-        text-align: center;
-        background-color: #f4f4f4;
+    .summary, .career-section {
+      font-size: 1.1rem;
+      text-align: justify;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .resume-download h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        color: #333;
+    .summary ul {
+      list-style: disc;
+      margin-top: 1.5rem;
+      margin-bottom: 0;
+      padding-left: 1.5rem;
+      text-align: left;
     }
 
-    /* For Download Resume button */
-    .download-btn {
-        background-color: #0073e6;
-        color: white;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        text-decoration: none;
-        border-radius: 50px;
-        display: inline-block;
-        font-weight: 400;
-        margin-top: 2rem;
-        transition: 0.3s ease;
+    li {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
     }
 
-    .download-btn:hover {
-        background-color: #005bb5;
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin: 3rem 0 1.25rem;
+      border-left: 4px solid #0073e6;
+      padding-left: 1rem;
     }
 
-    /* Key Competencies Section */
-    .competencies {
-        background-color: whitesmoke;
+    .section-title i {
+      margin-right: 0.5rem;
+      color: #0073e6;
     }
 
-    .skill-card {
-        background-color: #f9f9f9;
-        padding: 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    .domain-list {
+      margin-bottom: 2rem;
     }
 
-    .card {
-        background-color: #fff;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    .domain-list li {
+      list-style: none;
+      padding-left: 0;
+      position: relative;
+      margin-left: 0;
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+    .domain-list li::before {
+      content: "\2022";
+      color: #0073e6;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
     }
 
-    .container {
+    .highlight-block {
+      background: #e9f3ff;
+      padding: 1rem 1.5rem;
+      border-left: 5px solid #0073e6;
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+
+    footer {
+      background-color: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+    }
+
+   .trusted-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    }
+
+    .org {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .org:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+     .container {
         max-width: 1200px;
         margin: auto;
         padding: 0 10px;
         color: #555;
     }
 
-    .competencies h2 {
-        font-size: 2.5rem;
-        text-align: center;
-        color: #555;  
-    }
-
-    /* Professional Development Section */
-#professional-development {
-    background-color: whitesmoke;
-}
-
-#professional-development h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-    text-align: center;
-}
-
-#professional-development .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-#professional-development .card {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-}
-
-#professional-development .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-#professional-development .cta-btn {
-    background-color: #0073e6;
-    color: white;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    text-decoration: none;
-    border-radius: 50px;
-    display: inline-block;
-    font-weight: 500;
-    margin-top: 1rem;
-    transition: 0.3s ease;
-}
-
-#professional-development .cta-btn:hover {
-    background-color: #005bb5;
-    color: #fff;
-}
-
-/* Projects Section */
-.projects {
-    background-color:whitesmoke;
-}
-
-.projects h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-    text-align: center;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.card {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Trusted By Section */
-.trusted {
-    background-color: #f4f4f4;
-    padding: 4rem 0;
-}
-
-.trusted-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.org {
-    background-color: #fff;
-    padding: 2rem;
-    font-size: 1.2rem;
-    color: #333;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.org:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Certifications Section */
-.certifications {
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.certifications h2 {
-    margin-bottom: .75rem;
-}
-
-.cert-list {
-    list-style-type: disc;
-    padding-left: 0;
-    margin: .75rem auto;
-    display: inline-block;
-    text-align: left;
-}
-
-.cert-list li {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    color: #333;
-}
-
-/* Footer */
-.contact h2 {
-    font-size: 1.5rem;
-}
-
-.contact a {
-    font-size: 1rem;
-}
-
-/* Contact Section */
-.contact {
-    background-color: #2A3F54;
-    color: white;
-    padding: 4rem 0;
-    display: flex;
-    justify-content: center;
-}
-
-.contact .container {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    body {
-        padding: 0 1rem; /* Add side padding for better spacing */
-    }
-
-    .hero h1 {
-        font-size: 2rem; /* Reduce title size */
-    }
-
-    .hero p {
-        font-size: 1rem; /* Adjust paragraph size */
-    }
-
-    .cta-btn {
-        font-size: 0.9rem; /* Scale down button size */
-        padding: 0.4rem 0.8rem;
-    }
-
-    .grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
-    }
-
-    .trusted-grid {
-        grid-template-columns: 1fr; /* Adjust "Trusted By" layout */
-    }
-
-    .chat-button {
-        bottom: 10px; /* Adjust chatbot position */
-        right: 10px;
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    .about p,
-    .competencies p {
-        font-size: 1rem; /* Reduce paragraph text size */
-    }
-
-    .certifications .cert-list {
-        padding-left: 1rem; /* Add padding for bullets on mobile */
-    }
-
-    .projects .grid,
-    .trusted-grid {
-        gap: 1rem; /* Reduce spacing between cards */
-    }
-
-    .container {
-        padding: 0 1rem; /* Add horizontal padding */
-    }
-
-    /* Footer */
-    footer.contact {
-        flex-direction: column; /* Stack elements vertically */
-        text-align: center;
-    }
-}
-
-/* For very small devices (e.g., phones) */
-@media screen and (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.5rem; /* Further reduce font size */
-    }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    .grid {
-        gap: 1rem; /* Adjust spacing */
-    }
-
-    .chat-button {
-        font-size: 12px; /* Adjust button font size */
-    }
-
-    .about h2,
-    .competencies h2,
-    .projects h2 {
-        font-size: 1.5rem; /* Smaller section headers */
-    }
-
-    .container {
-        padding: 0.5rem; /* Slightly reduce padding */
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #professional-development .grid {
-        grid-template-columns: 1fr; /* Single column layout */
-        gap: 1rem; /* Adjust spacing between cards */
-    }
-
-    #professional-development .card {
-        text-align: center; /* Center-align content for better presentation */
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .chatbot-interface {
-        width: 90% !important; /* Expand to 90% of the screen width */
-        bottom: 0; /* Ensure it's pinned to the bottom */
-        right: 5%; /* Center it horizontally */
-        left: 5%; /* Add margin from both sides */
-        border-radius: 15px; /* Add rounded corners for a polished look */
-        overflow: hidden;
-    }
-
-    .chatbot-header, .chatbot-footer {
-        font-size: 1rem; /* Adjust font sizes for better readability */
-    }
-
-    .chatbot-content {
-        padding: 15px; /* Add extra padding for spacing */
-    }
-}
-
-.send-icon {
-  width: 32px; /* Adjust size as needed */
-  height: 32px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#sendButton {
-  background: none; /* Remove default button styles */
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-</style>
+  </style>
 </head>
 <body>
-    <!-- Header Section: Hero -->
-    <header class="hero">
-        <div class="container">
-            <h1>Ted Summey</h1>
-            <p>Cybersecurity Leader | Architect | AI Professional</p>
-            <p class="contact-info">
-                <a href="mailto:tsummey@tsummey.com">Email</a> | 
-                <a href="https://www.linkedin.com/in/tedsummey" target="_blank">LinkedIn</a> | 
-                <a href="https://your-portfolio-link.com" target="_blank">Portfolio</a> | 
-                <a href="Ted_Summey_Resume.pdf" target="_blank">Resume</a>
-            </p>
-            <a href="#competencies" class="cta-btn">Discover More</a>
-        </div>
-    </header>
+  <nav class="sidebar">
+    <a href="#summary"><i class="fas fa-user"></i> Summary</a>
+    <a href="#domains"><i class="fas fa-network-wired"></i> Career Domains</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="#trusted"><i class="fas fa-building"></i> Trusted By</a>
+    <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+    <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+    <a href="#projects"><i class="fas fa-flask"></i> Projects</a>
+  </nav>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I’m a cybersecurity leader with 25+ years of experience, specializing in high-impact security solutions for top organizations like Apple, Disney, Wells Fargo, and the Department of Homeland Security (DHS). My expertise includes incident response, threat intelligence, AI-driven security strategies, and cloud architecture.
-            </p>
-            <p>
-                I’ve led national and enterprise-wide initiatives, including fortifying national cybersecurity with CISA and DHS, while driving security overhauls at Fortune 500 companies. By integrating AI automation, I’ve enhanced threat detection and response capabilities, helping organizations mitigate risks faster and more efficiently.
-            </p>
-            <p>
-                With a deep technical background and executive leadership, I deliver scalable solutions that ensure security, business continuity, and compliance across industries.
-            </p>
-        </div>
-    </section>
+  <header>
+    <h1>Ted Summey, CISSP</h1>
+    <p>Cybersecurity Executive | Technical Strategist | Trusted Leader in Defense & Innovation</p>
+    <div class="contact-links">
+      <a href="mailto:tsummey@tsummey.com">Email</a>
+      <a href="https://linkedin.com/in/tedsummey" target="_blank">LinkedIn</a>
+      <a href="tel:+15747800857">+1 574-780-0857</a>
+    </div>
+  </header>
 
-    <!-- Key Compentencies Section -->
-    <section id="competencies" class="competencies">
-        <div class="container">
-            <h2>Key Competencies</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>AI & Machine Learning</h3>
-                    <p>Python, OpenAI, Azure AI, Model Training</p>
-                </div>
-                <div class="card">
-                    <h3>Cloud Architecture</h3>
-                    <p>AWS, Azure, Google Cloud, DevOps Automation</p>
-                </div>
-                <div class="card">
-                    <h3>Cybersecurity Leadership</h3>
-                    <p>Zero Trust Architecture (NIST, ISO 27001, CIS, SOC 2, FedRAMP)</p>
-                </div>
-                <div class="card">
-                    <h3>Regulatory Compliance Leadership</h3>
-                    <p>Expert in Compliance (HIPAA, PCI-DSS, GDPR).</p>
-                </div>
-                <div class="card">
-                    <h3>Cross-Functional Leadership</h3>
-                    <p>Cross-Functional Leadership & Team Collaboration</p>
-                </div>
-                <div class="card">
-                    <h3>Business Strategy</h3>
-                    <p>Aligning teams and products with business goals</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section id="summary">
+    <h2>Career Summary</h2>
+    <div class="summary">
+      <p>
+        Over the past five years, Ted Summey has delivered enterprise-grade cybersecurity and strategic impact across Fortune 500s and federal agencies. He’s worked directly with owners, board members, and C-level leaders on product design, GTM strategy, and competitive positioning. As a certified engineer and strategist, Ted blends hands-on technical execution with leadership in threat response, cost reduction, and operational resilience.
+      </p>
+      <ul>
+        <li>Saved $287K in annual operational costs at Walgreens</li>
+        <li>Identified $12K/month in unused AWS resources at Verizon</li>
+        <li>Slashed successful ransomware attacks by 85% in six months at Vidant Health</li>
+        <li>Closed gender pay gaps across engineering teams</li>
+        <li>Built Python tooling to migrate CRM data from Jira to Salesforce</li>
+        <li>Assessed BlueLeaks threat impact on SNCTC, protecting law enforcement</li>
+        <li>Authored DHS cyber advisories distributed via the Homeland Security Information Network (HSIN)</li>
+        <li>Led real-time mitigation of active phishing and remote-access attacks</li>
+        <li>Migrated MDR platforms to improve detection and response</li>
+        <li>Implemented SOAR automation to boost incident handling efficiency, accuracy, and consistency</li>
+      </ul>
+    </div>
+   </section>
 
-    <!-- Professional Development Section -->
-    <section id="professional-development" class="projects">
-        <div class="container">
-            <h2>AI - Professional Development</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>MIT Advanced Data Science Program</h3>
-                    <p>
-                        Completed a 6-month program covering 100+ topics and 25+ projects, including machine learning, deep learning, and recommendation systems, with real-world applications in healthcare and finance.
-                    </p>
-                    <a href="subpages/MIT/MIT-ADS-Details.html" class="cta-btn" target="_blank">Learn More</a>
-                </div>
-                <div class="card">
-                    <h3>Kaggle & Google 5-Day Generative AI Intensive</h3>
-                    <p>
-                        Explored foundational and advanced generative AI topics, including LLMs, embeddings, AI agents, and MLOps, through guided learning and hands-on projects.
-                    </p>    
-                    <a href="subpages/Kaggle/Kaggle-GenAI-Details.html" class="cta-btn" target="_blank">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section id="domains">
+    <h2>Career Domains</h2>
+    <div class="career-section">
+            <div class="section-title">Senior Infrastructure, Systems & Network Engineer (2000–2009)</div>
+        <ul class="domain-list">
+            <li>Deployed the first regional blade center with fiber SAN, improving scalability and efficiency</li>
+            <li>Led early adoption of thin client technology, reducing costs and optimizing resources</li>
+            <li>Architected bonded 3-T1 connectivity across states for high-speed, reliable transmission</li>
+            <li>Designed and implemented secure VPNs for remote sales staff</li>
+            <li>Developed VOIP connectivity via T1 channels, cutting communication costs</li>
+            <li>Reduced thin client setup time to 5 minutes with automated DHCP config</li>
+            <li>Managed Cisco ISR, switching, and routing for secure, resilient infrastructure</li>
+            <li>Optimized enterprise IT with Active Directory, Exchange, and Remote Desktop Services</li>
+            <li>Managed IBM WebSphere, Tivoli Storage Manager, and iSeries for enterprise reliability</li>
+            <li>Enhanced telecom using VOIP and Rolm/Panasonic systems</li>
+            <li>Orchestrated e-Discovery initiatives supporting active litigation</li>
+        </ul>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Selected Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Global MDR/XDR Enhancement</h3>
-                    <p>Increased threat detection by 30% and reduced response times by 40% while optimizing AWS resources, resulting in $12K monthly savings.</p>
-                </div>
-                <div class="card">
-                    <h3>Azure AI Integration</h3>
-                    <p>Developed AI-driven automation for cloud detection and response, building a foundation for future enterprise-level AI integrations.</p>
-                </div>
-                <div class="card">
-                    <h3>OpenAI & Llama Models</h3>
-                    <p>Led AI model implementations using GPT and Llama for enterprise threat intelligence and incident response systems, increasing detection accuracy by 25%.</p>
-                </div>
-                <div class="card">
-                    <h3>Fortified National Cybersecurity</h3>
-                    <p>Partnered with DHS and CISA to enhance compliance and improve threat intelligence through a national data-sharing framework.</p>
-                </div>
-                <div class="card">
-                    <h3>BlueLeaks Breach Response & Mitigation</h3>
-                    <p>Led breach response for Nevada law enforcement, delivering intelligence and mitigating threats with DHS and CISA.</p>
-                </div>
-                <div class="card">
-                    <h3>Command-and-Control Attack Response</h3>
-                    <p>Led response to a university cyberattack, securing systems, implementing MFA, and enforcing stricter protocols to prevent further breaches.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="section-title">Information Security & Risk Leadership (Financial Sector, 2009–2011)</div>
+        <ul class="domain-list">
+            <li>Designed and deployed secure network infrastructure, achieving high GLBA and FFIEC audit scores</li>
+            <li>Integrated secondary data center with active-active failover, ensuring high availability and resilience</li>
+            <li>Certified in Check Point NGX R70; configured, monitored, and optimized firewall performance</li>
+            <li>Led incident response operations, mitigating threats and minimizing business impact</li>
+            <li>Conducted Nmap scans and vulnerability assessments to maintain hardened environments</li>
+            <li>Managed secure file transfers with MOVEit, ensuring regulatory-compliant data exchange</li>
+            <li>Deployed SurfControl for web filtering, reducing exposure to malicious content</li>
+            <li>Engineered disaster recovery and failover solutions to support business continuity</li>
+            <li>Maintained seamless network operations using 3Com and HP switching/routing systems</li>
+        </ul>
 
-    <!-- Trusted By Section -->
-    <section id="trusted" class="trusted">
-        <div class="container">
-            <h2>Trusted by Leading Organizations</h2>
-            <div class="grid trusted-grid">
-                <div class="org">Apple</div>
-                <div class="org">Disney Interactive</div>
-                <div class="org">Dreamworks</div>
-                <div class="org">Wells Fargo</div>
-                <div class="org">DoD</div>
-                <div class="org">DHS</div>
-                <div class="org">US Secret Service</div>
-                <div class="org">Mattel</div>
-                <div class="org">Adobe</div>
-                <div class="org">GoPro</div>
-                <div class="org">Yahoo</div>
-                <div class="org">Zappos</div>
-            </div>
-        </div>
-    </section>
+      <div class="section-title">Security Advisory & Engineering Leadership (2012–2015)</div>
+        <ul class="domain-list">
+            <li>Protected Caesars infrastructure during DEF CON and World Series of Poker events</li>
+            <li>Delivered real-time assessments and led CSIRT operations ensuring zero-breach posture</li>
+            <li>Represented Trustwave at Black Hat, DEF CON, and RSA conferences for partner/customer engagements</li>
+            <li>Advised Sony, Disney, and Wells Fargo on MDR, EDR, and PCI compliance implementations</li>
+            <li>Deployed SIEM agents across 14K+ endpoints, resolving visibility and stability issues</li>
+            <li>Redesigned Walgreens Office 365 enterprise migration for strategic alignment and execution</li>
+            <li>Eliminated $287K in annual overhead through process improvement and tech optimization</li>
+            <li>Supported regulatory compliance through firewall, proxy, and DLP enforcement</li>
+        </ul>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
-        <div class="container">
-            <h2>Certifications</h2>
-            <ul class="cert-list">
-                <li>AWS Certified Cloud Practitioner</li>
-                <li>Microsoft Certified: Azure Fundamentals</li>
-                <li>Microsoft Certified: AI & Security Fundamentals</li>
-                <li>MIT Professional Education: Data Science & AI</li>
-            </ul>
-        </div>
+      <div class="section-title">C-Suite & Board-Level Leadership | GTM Strategy | Security & Solutions Engineering (2015–2020)</div>
+        <ul class="domain-list">
+            <li>Directed three departments at Vidant Health; interim manager for security ops and compliance</li>
+            <li>Oversaw Americas region at BlueVoyant; managed three regional managers and 15+ engineers</li>
+            <li>Advised boards and C-suites at BlueVoyant, Giant Oak, and LookingGlass on risk and GTM</li>
+            <li>Represented executive leadership at RSA, Black Hat, and MENA ISC; ran solo booth operations</li>
+            <li>Accompanied LookingGlass CEO to MENA ISC (Saudi Arabia) for high-level global market push</li>
+            <li>Drove gender pay equity and developed career pathways for distributed engineering teams</li>
+            <li>Led GTM and technical pre-sales for DoD, IRS, DHS, and U.S. Secret Service opportunities</li>
+            <li>Managed SOC, IR, and architecture teams, reducing ransomware incidents by 85% in 6 months</li>
+            <li>Published threat intelligence to HSIN and briefed agencies on APTs and ransomware defense</li>
+            <li>Delivered cloud-first modernization roadmaps with ROI models and funding strategies</li>
+            <li>Oversaw enterprise compliance across HIPAA, PCI-DSS, and NIST frameworks</li>
+        </ul>
 
-    <!-- Footer Section -->
-    <footer class="contact">
-        <div class="container" style="color: white;">
-            <p>&copy; 2024 Ted Summey. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <div class="section-title">National Threat Strategy, Product Innovation & Federal Partnership (2020–Present)</div>
+        <ul class="domain-list">
+            <li>Embedded in fusion center operations with FBI, Treasury, DOE, TSA, LVMPD, and the Nevada CISO to monitor national threat activity</li>
+            <li>Delivered cyber advisories and gang/actor intelligence to DHS via HSIN, strengthening public-sector defenses</li>
+            <li>Monitored threat activity targeting Nevada higher education, casinos, municipalities, and regional infrastructure</li>
+            <li>Drove MDR product demos and technical strategy for law enforcement and federal clients at ZeroFOX and CyberClan</li>
+            <li>Led product innovation for Verizon’s MXDR platform; cut AWS spend by $12K/month and slashed SIEM ingestion by 300%</li>
+            <li>Automated SOC triage workflows with GenAI and Microsoft Sentinel, reducing false positives and analyst load</li>
+            <li>Scoped and deployed AWS cloud security architectures with RBAC, Zero Trust, and compliance enforcement</li>
+            <li>Supported GTM execution at RSA, Black Hat, and ISC MENA, aligning with C-suite and agency stakeholders</li>
+        </ul>
+    </div>
+  </section>
 
-    <button class="chat-button" id="chatButton">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M12 3C6.48 3 2 6.58 2 11c0 2.08 1.06 3.97 2.82 5.43L4 20l3.74-1.55c1.07.36 2.23.55 3.46.55 5.52 0 10-3.58 10-8s-4.48-8-10-8zm0 14c-1.05 0-2.05-.16-2.97-.46L6 17l.81-2.46C5.44 13.67 4 12.04 4 11c0-3.03 3.58-6 8-6s8 2.97 8 6-3.58 6-8 6z"/>
-        </svg>
-        <span>Questions?</span>
-      </button>
-      
-      <div class="chatbot-interface" id="chatbotInterface">
-        <div class="chatbot-header">
-          <span>Ask about Ted</span>
-          <button id="closeButton">&times;</button>
-        </div>
-        <div class="chatbot-content" id="chatbotContent">
-          <p>Chat about Ted's professional experience!</p>
-        </div>
-        <div class="chatbot-footer">
-          <input type="text" id="chatInput" placeholder="Type your message here...">
-          <button id="sendButton">
-            <img src="chatarrow.png" alt="Send" class="send-icon">
-          </button>
-        </div>
-      </div>
-      
+  <section id="trusted" class="trusted">
+  <div class="container">
+    <h2>Trusted by Leading Organizations</h2>
+    <div class="trusted-grid">
+      <div class="org">American Express</div>
+      <div class="org">Apple</div>
+      <div class="org">Disney Interactive</div>
+      <div class="org">Dreamworks</div>
+      <div class="org">Wells Fargo</div>
+      <div class="org">Department of Defense</div>
+      <div class="org">Department of Homeland Security</div>
+      <div class="org">US Secret Service</div>
+      <div class="org">Southern Nevada Counterterrorism Center</div>
+      <div class="org">Mattel</div>
+      <div class="org">Adobe</div>
+      <div class="org">GoPro</div>
+      <div class="org">Yahoo</div>
+      <div class="org">Zappos</div>
+    </div>
+  </div>
+</section>
 
-      <script>
-        const chatButton = document.getElementById('chatButton');
-        const chatbotInterface = document.getElementById('chatbotInterface');
-        const closeButton = document.getElementById('closeButton');
-        const sendButton = document.getElementById('sendButton');
-        const chatInput = document.getElementById('chatInput');
-        const chatbotContent = document.getElementById('chatbotContent');
-    
-        const apiUrl = 'https://tsummey-portfolio.onrender.com/chat'; // Your Render API endpoint
-    
-        chatButton.addEventListener('click', () => {
-            const isMobile = window.innerWidth <= 768; // Check if the screen width is less than or equal to 768px
-    
-            if (isMobile) {
-                // Styles for mobile devices
-                chatbotInterface.style.width = '90%';
-                chatbotInterface.style.height = '80%';
-                chatbotInterface.style.right = '5%'; // Center horizontally
-                chatbotInterface.style.left = '5%'; // Add left margin
-                chatbotInterface.style.bottom = '5%'; // Add bottom margin
-            } else {
-                // Styles for non-mobile devices
-                chatbotInterface.style.width = '30%';
-                chatbotInterface.style.height = '80%';
-                chatbotInterface.style.right = '0'; // Align to the right
-                chatbotInterface.style.left = 'auto'; // Remove any left alignment
-                chatbotInterface.style.bottom = '5%'; // Add bottom margin
-            }
-            chatbotInterface.classList.add('open'); // Add the open class for other styles, if needed
-        });
-    
-        closeButton.addEventListener('click', () => {
-            // Reset styles to collapse the chatbot
-            chatbotInterface.style.width = '0';
-            chatbotInterface.style.height = '0';
-            chatbotInterface.classList.remove('open');
-        });
-    
-        async function sendMessage() {
-            const userMessage = chatInput.value.trim();
-            if (!userMessage) return;
-    
-            // Create a container for the user's message
-            const userMessageElem = document.createElement('div');
-            userMessageElem.textContent = userMessage;
-            userMessageElem.classList.add('message', 'user-message'); // Add both message and user-message classes
-            chatbotContent.appendChild(userMessageElem);
-    
-            // Scroll to the bottom
-            chatbotContent.scrollTop = chatbotContent.scrollHeight;
-    
-            // Clear the input
-            chatInput.value = '';
-    
-            // Send the message to the API
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: userMessage }),
-                });
-    
-                if (!response.ok) {
-                    throw new Error('Failed to connect to the chatbot API');
-                }
-    
-                const data = await response.json();
-    
-                // Create a container for the bot's message
-                const botMessageElem = document.createElement('div');
-                botMessageElem.textContent = data.response;
-                botMessageElem.classList.add('message', 'bot-message'); // Add both message and bot-message classes
-                chatbotContent.appendChild(botMessageElem);
-    
-                // Scroll to the bottom
-                chatbotContent.scrollTop = chatbotContent.scrollHeight;
-            } catch (error) {
-                const errorMessageElem = document.createElement('div');
-                errorMessageElem.textContent = 'Tedbot: Sorry, something went wrong!';
-                errorMessageElem.classList.add('message', 'bot-message');
-                chatbotContent.appendChild(errorMessageElem);
-                console.error('Error:', error); // Log the error for debugging
-            }
-        }
-    
-        // Attach event listener for "Send" button click
-        sendButton.addEventListener('click', sendMessage);
-    
-        // Attach event listener for "Enter" and "Shift+Enter" key handling
-        chatInput.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                if (!event.shiftKey) {
-                    event.preventDefault(); // Prevent adding a newline
-                    sendMessage(); // Call sendMessage function
-                }
-            }
-        });
-    </script>    
+<section id="certifications" class="certifications">
+  <div class="summary">
+    <h2>Certifications</h2>
+    <ul class="domain-list">
+      <li>CISSP – (ISC)², May 2025 - May 2028</li>
+      <li>DoD 8570/8140 Compliant (via CISSP) – (ISC)², May 2025 - May 2028</li>
+      <li>Applied Data Science – MIT Professional Education, Aug 2022</li>
+      <li>AWS Certified Cloud Practitioner – AWS, Dec 2022 - Dec 2025</li>
+      <li>Microsoft Certified: Azure Fundamentals – Microsoft, Oct 2023 - Oct 2025</li>
+      <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals – Microsoft, Jun 2024 - Jun 2026</li>
+      <li>Microsoft Certified: Azure AI Fundamentals – Microsoft, Jul 2024 - Jul 2026</li>
+    </ul>
+  </div>
+</section>
 
+<section id="education" class="education">
+  <div class="summary">
+    <h2>Education</h2>
+    <ul class="domain-list">
+      <li><strong>B.S. Business Management</strong> – Western Governors University, Mar 2020</li>
+      <li><strong>A.S. Computer Science</strong> – Indiana University South Bend, May 2004</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <div class="summary">
+    <h2>Strategic Projects</h2>
+
+    <div class="section-title">Post-Quantum Cryptographic Framework</div>
+    <ul class="domain-list">
+      <li>Built encryption workflows using AES-256, Kyber, Dilithium, and Sphincs+</li>
+      <li>Created serverless key gen outside cloud KMS; integrated with secure vault storage</li>
+      <li>Hardened key lifecycle against Harvest-Now, Decrypt-Later quantum threat models</li>
+    </ul>
+
+    <div class="section-title">ChatGPT-Integrated Professional Profile Chatbot</div>
+    <ul class="domain-list">
+      <li>Designed an AI Q&A interface for real-time recruiter engagement</li>
+      <li>Enabled fast interactive vetting via prompt-driven dynamic responses</li>
+      <li>Used prompt engineering to drive clarity and domain relevance</li>
+    </ul>
+
+    <div class="section-title">Planned: Azure Vault-Based PQ Key Management</div>
+    <ul class="domain-list">
+      <li>Building serverless PQClean-based key gen for Kyber, Dilithium, SPHINCS+</li>
+      <li>Integrating with Azure Key Vault Premium for quantum-safe storage</li>
+      <li>Aligning with emerging cryptographic standards and DevSecOps protocols</li>
+    </ul>
+  </div>
+</section>
+
+  <footer id="contact" role="contentinfo">
+    &copy; 2024 Ted Summey. All rights reserved.
+  </footer>
 </body>
 </html>
