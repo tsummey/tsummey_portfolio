@@ -367,6 +367,11 @@
     .cert-icon.aws     { background: #fff3e0; color: #e65100; }
     .cert-icon.msft    { background: #e3f2fd; color: #1565c0; }
     .cert-icon.palo    { background: #fce4ec; color: #c62828; }
+    .cert-featured {
+      border: 2px solid #c62828;
+      background: linear-gradient(135deg, #fff8f8, #ffffff);
+      box-shadow: 0 2px 12px rgba(198,40,40,0.12);
+    }
     .cert-icon.mit     { background: #f3e5f5; color: #6a1b9a; }
     .cert-title  { font-weight: 600; font-size: 0.92rem; color: var(--text); line-height: 1.3; }
     .cert-issuer { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; }
@@ -707,10 +712,22 @@
           </div>
         </div>
 
+        <div class="cert-card cert-featured">
+          <div class="cert-icon palo" style="width:48px;height:48px;font-size:1.3rem;"><i class="fas fa-certificate"></i></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
+              <div class="cert-title" style="font-size:1rem;">XSIAM Engineer — Certified</div>
+              <span style="background:#c62828;color:white;font-size:0.68rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:10px;letter-spacing:0.5px;">ENGINEER</span>
+            </div>
+            <div class="cert-issuer">Palo Alto Networks &nbsp;·&nbsp; Oct 2025</div>
+            <div class="cert-issuer" style="color:#c62828;font-size:0.75rem;margin-top:0.2rem;">Professional-level certification · Cortex XSIAM platform engineering</div>
+          </div>
+        </div>
+
         <div class="cert-card">
           <div class="cert-icon palo"><i class="fas fa-fire"></i></div>
           <div>
-            <div class="cert-title">Palo Alto Networks: Cortex XDR, XSIAM &amp; XSOAR</div>
+            <div class="cert-title">Palo Alto Networks: Cortex XDR &amp; XSOAR</div>
             <div class="cert-issuer">Palo Alto Networks &nbsp;·&nbsp; Oct 2025</div>
           </div>
         </div>
