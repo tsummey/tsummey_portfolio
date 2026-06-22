@@ -35,33 +35,36 @@
       font-size: 16px;
     }
 
-    /* ── Sidebar Nav ── */
-    nav.sidebar {
-      position: fixed;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      background: var(--navy2);
-      padding: 0.75rem 0.5rem;
-      border-radius: 0 8px 8px 0;
+    /* ── Top Nav ── */
+    nav.topnav {
+      position: sticky;
+      top: 0;
       z-index: 1000;
-      box-shadow: 2px 0 12px rgba(0,0,0,0.2);
-    }
-    nav.sidebar a {
+      background: var(--navy2);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      color: var(--muted);
-      padding: 0.45rem 0.75rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 500;
-      transition: color 0.2s, background 0.2s;
-      white-space: nowrap;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 0 1rem;
     }
-    nav.sidebar a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
-    nav.sidebar i { width: 14px; text-align: center; }
+    nav.topnav a {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--muted);
+      padding: 0.75rem 0.9rem;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    nav.topnav a:hover,
+    nav.topnav a.active { color: var(--white); border-bottom-color: var(--teal2); }
+    nav.topnav i { font-size: 0.75rem; }
 
     /* ── Header ── */
     header {
@@ -501,9 +504,12 @@
 
     /* ── Responsive ── */
     @media (max-width: 768px) {
-      nav.sidebar { display: none; }
       .metrics-bar { gap: 0; }
       .metric { padding: 1rem 1.25rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); width: 50%; }
+    }
+    @media (max-width: 640px) {
+      nav.topnav a span { display: none; }
+      nav.topnav a { padding: 0.75rem 0.6rem; }
     }
     @media (max-width: 480px) {
       .metric { width: 100%; }
@@ -512,16 +518,16 @@
 </head>
 <body>
 
-  <nav class="sidebar">
-    <a href="#top"><i class="fas fa-home"></i> Top</a>
-    <a href="#summary"><i class="fas fa-user"></i> Summary</a>
-    <a href="#career"><i class="fas fa-briefcase"></i> Career</a>
-    <a href="#trusted"><i class="fas fa-building"></i> Trusted By</a>
-    <a href="#certifications"><i class="fas fa-certificate"></i> Certs</a>
-    <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-    <a href="#projects"><i class="fas fa-flask"></i> Projects</a>
-    <a href="#publications"><i class="fas fa-pen-nib"></i> Articles</a>
-    <a href="#skills"><i class="fas fa-layer-group"></i> Skills</a>
+  <nav class="topnav">
+    <a href="#top"><i class="fas fa-home"></i> <span>Top</span></a>
+    <a href="#summary"><i class="fas fa-user"></i> <span>Summary</span></a>
+    <a href="#career"><i class="fas fa-briefcase"></i> <span>Career</span></a>
+    <a href="#trusted"><i class="fas fa-building"></i> <span>Trusted By</span></a>
+    <a href="#certifications"><i class="fas fa-certificate"></i> <span>Certs</span></a>
+    <a href="#education"><i class="fas fa-graduation-cap"></i> <span>Education</span></a>
+    <a href="#projects"><i class="fas fa-flask"></i> <span>Projects</span></a>
+    <a href="#publications"><i class="fas fa-pen-nib"></i> <span>Articles</span></a>
+    <a href="#skills"><i class="fas fa-layer-group"></i> <span>Skills</span></a>
   </nav>
 
   <!-- ── HEADER ── -->
