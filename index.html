@@ -3,392 +3,932 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ted Summey | Cybersecurity Executive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <meta name="description" content="Ted Summey | Cybersecurity Executive, CISO/CTO Advisor, Solutions Engineer, and Strategic Leader supporting Fortune 500s and Federal Agencies.">
+  <title>Ted Summey, CISSP | Cybersecurity Executive</title>
+  <meta name="description" content="Ted Summey | Cybersecurity Executive, CISSP — currently at Palo Alto Networks. CISO/CTO Advisor, Solutions Engineer, and Strategic Leader supporting Fortune 500s and Federal Agencies.">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    :root {
+      --navy:   #0a1628;
+      --navy2:  #112240;
+      --teal:   #0d7377;
+      --teal2:  #14a9ad;
+      --gold:   #f5a623;
+      --white:  #f8fafc;
+      --muted:  #94a3b8;
+      --card:   #ffffff;
+      --border: #e2e8f0;
+      --text:   #1e293b;
+      --accent: #0073e6;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #f5f7fa;
-      color: #1e1e1e;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background: #f1f5f9;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
     }
 
-    header {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: 600;
-    }
-
-    header p {
-      margin: 0.5rem 0 1.2rem;
-      font-size: 1.25rem;
-      font-weight: 400;
-    }
-
-    .contact-links {
-      font-size: 1rem;
-    }
-
-    .contact-links a {
-      color: #ffcc00;
-      margin: 0 0.6rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
+    /* ── Sidebar Nav ── */
     nav.sidebar {
       position: fixed;
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      background: #203a43;
-      padding: 1rem;
-      border-radius: 0 5px 5px 0;
+      background: var(--navy2);
+      padding: 0.75rem 0.5rem;
+      border-radius: 0 8px 8px 0;
       z-index: 1000;
+      box-shadow: 2px 0 12px rgba(0,0,0,0.2);
+    }
+    nav.sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      padding: 0.45rem 0.75rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    nav.sidebar a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    nav.sidebar i { width: 14px; text-align: center; }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f2a4a 50%, #0d3b6e 100%);
+      color: white;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(13,115,119,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 30%, rgba(0,115,230,0.1) 0%, transparent 60%);
+    }
+    header > * { position: relative; }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245,166,35,0.15);
+      border: 1px solid rgba(245,166,35,0.4);
+      color: var(--gold);
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.5px;
     }
 
-    nav.sidebar a {
-      display: block;
-      color: white;
-      margin: 0.5rem 0;
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-title {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: #a8c0d6;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .current-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(20,169,173,0.15);
+      border: 1px solid rgba(20,169,173,0.4);
+      color: var(--teal2);
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0.75rem 0 1.5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.25rem;
+      font-size: 0.95rem;
+    }
+    .contact-links a {
+      color: #cbd5e1;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s;
+    }
+    .contact-links a:hover { color: var(--gold); }
+
+    /* ── Metrics Bar ── */
+    .metrics-bar {
+      background: var(--navy2);
+      color: white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      border-bottom: 2px solid var(--teal);
+    }
+    .metric {
+      text-align: center;
+      padding: 1.25rem 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .metric:last-child { border-right: none; }
+    .metric-value {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'Roboto Mono', monospace;
+    }
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 0.15rem;
+    }
+
+    /* ── Page Layout ── */
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
     section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
-      border-bottom: 1px solid #ddd;
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    section:not(:first-of-type) {
-      padding-top: 1.5rem;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.25rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      color: #203a43;
-    }
-
-    .summary, .career-section {
-      font-size: 1.1rem;
-      text-align: justify;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .summary ul {
-      list-style: disc;
-      margin-top: 1.5rem;
-      margin-bottom: 0;
-      padding-left: 1.5rem;
-      text-align: left;
-    }
-
-    li {
-      margin-bottom: 0.75rem;
-      font-size: 1rem;
-    }
-
-    .section-title {
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: #2c3e50;
-      margin: 3rem 0 1.25rem;
-      border-left: 4px solid #0073e6;
-      padding-left: 1rem;
-    }
-
-    .section-title i {
-      margin-right: 0.5rem;
-      color: #0073e6;
-    }
-
-    .domain-list {
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       margin-bottom: 2rem;
     }
-
-    .domain-list li {
-      list-style: none;
-      padding-left: 0;
-      position: relative;
-      margin-left: 0;
+    .section-header h2 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--navy2);
     }
-
-    .domain-list li::before {
-      content: "\2022";
-      color: #0073e6;
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-
-    .highlight-block {
-      background: #e9f3ff;
-      padding: 1rem 1.5rem;
-      border-left: 5px solid #0073e6;
-      margin: 2rem auto;
-      max-width: 900px;
-    }
-
-    footer {
-      background-color: #1e1e1e;
+    .section-icon {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, var(--teal), var(--accent));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      text-align: center;
-      padding: 2rem 1rem;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Summary ── */
+    .summary-text {
+      font-size: 1.08rem;
+      color: #334155;
+      max-width: 820px;
+      margin-bottom: 2rem;
+      line-height: 1.75;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+    .achievement-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--teal);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .achievement-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .achievement-card i {
+      color: var(--teal);
+      font-size: 1rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .achievement-card span { font-size: 0.95rem; color: var(--text); }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 8px; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal), var(--accent), transparent);
+    }
+    .timeline-entry { position: relative; margin-bottom: 2.5rem; }
+    .timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 16px; height: 16px;
+      background: var(--teal);
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--teal);
+    }
+    .timeline-period {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--navy2), #1e3a5f);
+      color: var(--teal2);
+      padding: 0.2rem 0.85rem;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: 'Roboto Mono', monospace;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-role {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy2);
+      margin-bottom: 0.75rem;
+    }
+    .timeline-items {
+      list-style: none;
+      padding: 0;
+    }
+    .timeline-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.3rem 0;
       font-size: 0.95rem;
+      color: #475569;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .timeline-items li:last-child { border-bottom: none; }
+    .timeline-items li::before {
+      content: '▸';
+      color: var(--teal);
+      flex-shrink: 0;
+      margin-top: 1px;
     }
 
-   .trusted-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    /* ── Trusted Grid ── */
+    .org-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .org-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--navy2);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 64px;
+    }
+    .org-card:hover {
+      border-color: var(--teal);
+      background: linear-gradient(135deg, #f0fffe, #f8fafc);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(13,115,119,0.12);
     }
 
-    .org {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    /* ── Cert / Edu Cards ── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cert-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .cert-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .cert-icon.isc2    { background: #e8f5e9; color: #2e7d32; }
+    .cert-icon.aws     { background: #fff3e0; color: #e65100; }
+    .cert-icon.msft    { background: #e3f2fd; color: #1565c0; }
+    .cert-icon.palo    { background: #fce4ec; color: #c62828; }
+    .cert-icon.mit     { background: #f3e5f5; color: #6a1b9a; }
+    .cert-title  { font-weight: 600; font-size: 0.92rem; color: var(--text); line-height: 1.3; }
+    .cert-issuer { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; }
+
+    /* ── Projects ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(0,115,230,0.1);
+      transform: translateY(-2px);
+    }
+    .project-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #eff6ff;
+      color: var(--accent);
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+    .project-title { font-size: 1.05rem; font-weight: 700; color: var(--navy2); }
+    .project-items { list-style: none; padding: 0; }
+    .project-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: #475569;
+      padding: 0.25rem 0;
+    }
+    .project-items li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+
+    /* ── Publications ── */
+    .pub-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .pub-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pub-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .pub-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      font-family: 'Roboto Mono', monospace;
+      white-space: nowrap;
+    }
+    .pub-title { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+
+    /* ── Skills Chips ── */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .skill-chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .skill-chip:hover {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
     }
 
-    .org:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: #64748b;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      font-size: 0.9rem;
     }
+    footer a { color: var(--teal2); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
-     .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 0 10px;
-        color: #555;
+    /* ── Education ── */
+    .edu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      margin-bottom: 1rem;
     }
-
-  @media screen and (max-width: 768px) {
-    nav.sidebar {
-      display: none;
+    .edu-icon {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, #e8f4fd, #dbeafe);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      color: var(--accent);
+      flex-shrink: 0;
     }
-}
+    .edu-degree { font-weight: 700; font-size: 1rem; color: var(--navy2); }
+    .edu-school { font-size: 0.9rem; color: #475569; margin-top: 0.1rem; }
+    .edu-year   { font-size: 0.8rem; color: var(--muted); font-family: 'Roboto Mono', monospace; margin-top: 0.2rem; }
 
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      nav.sidebar { display: none; }
+      .metrics-bar { gap: 0; }
+      .metric { padding: 1rem 1.25rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); width: 50%; }
+    }
+    @media (max-width: 480px) {
+      .metric { width: 100%; }
+    }
   </style>
 </head>
 <body>
+
   <nav class="sidebar">
-    <a href="#top">Top</a>
+    <a href="#top"><i class="fas fa-home"></i> Top</a>
     <a href="#summary"><i class="fas fa-user"></i> Summary</a>
-    <a href="#domains"><i class="fas fa-network-wired"></i> Career Domains</a>
-    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="#career"><i class="fas fa-briefcase"></i> Career</a>
     <a href="#trusted"><i class="fas fa-building"></i> Trusted By</a>
-    <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+    <a href="#certifications"><i class="fas fa-certificate"></i> Certs</a>
     <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
     <a href="#projects"><i class="fas fa-flask"></i> Projects</a>
+    <a href="#publications"><i class="fas fa-pen-nib"></i> Articles</a>
+    <a href="#skills"><i class="fas fa-layer-group"></i> Skills</a>
   </nav>
 
+  <!-- ── HEADER ── -->
   <header id="top">
-    <h1>Ted Summey, CISSP</h1>
-    <p>Cybersecurity Executive | Technical Strategist | Trusted Leader in Defense & Innovation</p>
+    <div class="header-badge">
+      <i class="fas fa-shield-halved"></i> CISSP Certified &nbsp;·&nbsp; DoD 8570/8140 Compliant
+    </div>
+    <h1>Ted Summey</h1>
+    <p class="header-title">Cybersecurity Executive &nbsp;·&nbsp; Technical Strategist &nbsp;·&nbsp; Federal &amp; Enterprise Leader</p>
+    <div class="current-role">
+      <i class="fas fa-circle" style="font-size:0.5rem;color:#22c55e"></i>
+      Currently at Palo Alto Networks — Knoxville, TN
+    </div>
     <div class="contact-links">
-      <a href="mailto:tsummey@tsummey.com">Email</a>
-      <a href="https://linkedin.com/in/tedsummey" target="_blank">LinkedIn</a>
-      <a href="tel:+15747800857">+1 574-780-0857</a>
+      <a href="mailto:tsummey@tsummey.com"><i class="fas fa-envelope"></i> tsummey@tsummey.com</a>
+      <a href="https://linkedin.com/in/tedsummey" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/tedsummey</a>
+      <a href="https://github.com/tsummey" target="_blank"><i class="fab fa-github"></i> github.com/tsummey</a>
+      <a href="tel:+15747800857"><i class="fas fa-phone"></i> +1 574-780-0857</a>
     </div>
   </header>
 
-  <section id="summary">
-    <h2>Career Summary</h2>
-    <div class="summary">
-      <p>
-        Over the past five years, Ted Summey has delivered enterprise-grade cybersecurity and strategic impact across Fortune 500s and federal agencies. He’s worked directly with owners, board members, and C-level leaders on product design, GTM strategy, and competitive positioning. As a certified engineer and strategist, Ted blends hands-on technical execution with leadership in threat response, cost reduction, and operational resilience.
+  <!-- ── METRICS BAR ── -->
+  <div class="metrics-bar">
+    <div class="metric"><div class="metric-value">25+</div><div class="metric-label">Years in IT &amp; Security</div></div>
+    <div class="metric"><div class="metric-value">$287K</div><div class="metric-label">Annual Savings Delivered</div></div>
+    <div class="metric"><div class="metric-value">85%</div><div class="metric-label">Ransomware Reduction</div></div>
+    <div class="metric"><div class="metric-value">14K+</div><div class="metric-label">Endpoints Managed</div></div>
+    <div class="metric"><div class="metric-value">F500</div><div class="metric-label">+ Federal Agency Clients</div></div>
+  </div>
+
+  <!-- ── SUMMARY ── -->
+  <div class="page-wrapper">
+    <section id="summary">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-user-tie"></i></div>
+        <h2>Career Summary</h2>
+      </div>
+      <p class="summary-text">
+        Ted Summey is a CISSP-certified cybersecurity executive with 25+ years of experience spanning infrastructure engineering, information security, federal intelligence, and enterprise product strategy. He operates at the intersection of deep technical expertise and executive-level leadership — advising boards, C-suites, and federal agencies while delivering measurable security outcomes across Fortune 500s, healthcare systems, financial institutions, and government organizations. Currently with Palo Alto Networks, Ted brings a track record of building high-performing teams, driving GTM strategy, and deploying next-generation security architectures at scale.
       </p>
-      <ul>
-        <li>Saved $287K in annual operational costs at Walgreens</li>
-        <li>Identified $12K/month in unused AWS resources at Verizon</li>
-        <li>Slashed successful ransomware attacks by 85% in six months at Vidant Health</li>
-        <li>Closed gender pay gaps across engineering teams</li>
-        <li>Built Python tooling to migrate CRM data from Jira to Salesforce</li>
-        <li>Assessed BlueLeaks threat impact on SNCTC, protecting law enforcement</li>
-        <li>Authored DHS cyber advisories distributed via the Homeland Security Information Network (HSIN)</li>
-        <li>Led real-time mitigation of active phishing and remote-access attacks</li>
-        <li>Migrated MDR platforms to improve detection and response</li>
-        <li>Implemented SOAR automation to boost incident handling efficiency, accuracy, and consistency</li>
-      </ul>
-    </div>
-   </section>
+      <div class="achievement-grid">
+        <div class="achievement-card"><i class="fas fa-arrow-trend-down"></i><span>Saved <strong>$287K</strong> in annual operational costs at Walgreens through process optimization</span></div>
+        <div class="achievement-card"><i class="fas fa-cloud"></i><span>Identified <strong>$12K/month</strong> in unused AWS resources at Verizon, cutting SIEM ingestion by 300%</span></div>
+        <div class="achievement-card"><i class="fas fa-shield-virus"></i><span>Reduced ransomware incidents by <strong>85%</strong> in six months at Vidant Health</span></div>
+        <div class="achievement-card"><i class="fas fa-robot"></i><span>Automated SOC triage with GenAI + Microsoft Sentinel, cutting false positives and analyst load</span></div>
+        <div class="achievement-card"><i class="fas fa-file-shield"></i><span>Authored DHS cyber advisories distributed across Homeland Security Information Network (HSIN)</span></div>
+        <div class="achievement-card"><i class="fas fa-landmark"></i><span>Embedded with FBI, Treasury, DOE, TSA, and Nevada CISO in fusion center threat monitoring operations</span></div>
+        <div class="achievement-card"><i class="fas fa-users-gear"></i><span>Oversaw Americas region at BlueVoyant — 3 regional managers and 15+ security engineers</span></div>
+        <div class="achievement-card"><i class="fas fa-code"></i><span>Built Python tooling to migrate CRM data from Jira to Salesforce; SOAR automation for IR workflows</span></div>
+      </div>
+    </section>
 
-  <section id="domains">
-    <h2>Career Domains</h2>
-    <div class="career-section">
-            <div class="section-title">Senior Infrastructure, Systems & Network Engineer (2000–2009)</div>
-        <ul class="domain-list">
-            <li>Deployed the first regional blade center with fiber SAN, improving scalability and efficiency</li>
-            <li>Led early adoption of thin client technology, reducing costs and optimizing resources</li>
-            <li>Architected bonded 3-T1 connectivity across states for high-speed, reliable transmission</li>
-            <li>Designed and implemented secure VPNs for remote sales staff</li>
-            <li>Developed VOIP connectivity via T1 channels, cutting communication costs</li>
-            <li>Reduced thin client setup time to 5 minutes with automated DHCP config</li>
-            <li>Managed Cisco ISR, switching, and routing for secure, resilient infrastructure</li>
-            <li>Optimized enterprise IT with Active Directory, Exchange, and Remote Desktop Services</li>
-            <li>Managed IBM WebSphere, Tivoli Storage Manager, and iSeries for enterprise reliability</li>
-            <li>Enhanced telecom using VOIP and Rolm/Panasonic systems</li>
-            <li>Orchestrated e-Discovery initiatives supporting active litigation</li>
-        </ul>
+    <!-- ── CAREER TIMELINE ── -->
+    <section id="career">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-briefcase"></i></div>
+        <h2>Career History</h2>
+      </div>
+      <div class="timeline">
 
-      <div class="section-title">Information Security & Risk Leadership (Financial Sector, 2009–2011)</div>
-        <ul class="domain-list">
-            <li>Designed and deployed secure network infrastructure, achieving high GLBA and FFIEC audit scores</li>
-            <li>Integrated secondary data center with active-active failover, ensuring high availability and resilience</li>
-            <li>Certified in Check Point NGX R70; configured, monitored, and optimized firewall performance</li>
-            <li>Led incident response operations, mitigating threats and minimizing business impact</li>
-            <li>Conducted Nmap scans and vulnerability assessments to maintain hardened environments</li>
-            <li>Managed secure file transfers with MOVEit, ensuring regulatory-compliant data exchange</li>
-            <li>Deployed SurfControl for web filtering, reducing exposure to malicious content</li>
-            <li>Engineered disaster recovery and failover solutions to support business continuity</li>
-            <li>Maintained seamless network operations using 3Com and HP switching/routing systems</li>
-        </ul>
-
-      <div class="section-title">Security Advisory & Engineering Leadership (2012–2015)</div>
-        <ul class="domain-list">
-            <li>Protected Caesars infrastructure during DEF CON and World Series of Poker events</li>
-            <li>Delivered real-time assessments and led CSIRT operations ensuring zero-breach posture</li>
-            <li>Represented Trustwave at Black Hat, DEF CON, and RSA conferences for partner/customer engagements</li>
-            <li>Advised Sony, Disney, and Wells Fargo on MDR, EDR, and PCI compliance implementations</li>
-            <li>Deployed SIEM agents across 14K+ endpoints, resolving visibility and stability issues</li>
-            <li>Redesigned Walgreens Office 365 enterprise migration for strategic alignment and execution</li>
-            <li>Eliminated $287K in annual overhead through process improvement and tech optimization</li>
-            <li>Supported regulatory compliance through firewall, proxy, and DLP enforcement</li>
-        </ul>
-
-      <div class="section-title">C-Suite & Board-Level Leadership | GTM Strategy | Security & Solutions Engineering (2015–2020)</div>
-        <ul class="domain-list">
-            <li>Directed three departments at Vidant Health; interim manager for security ops and compliance</li>
-            <li>Oversaw Americas region at BlueVoyant; managed three regional managers and 15+ engineers</li>
-            <li>Advised boards and C-suites at BlueVoyant, Giant Oak, and LookingGlass on risk and GTM</li>
-            <li>Represented executive leadership at RSA, Black Hat, and MENA ISC; ran solo booth operations</li>
-            <li>Accompanied LookingGlass CEO to MENA ISC (Saudi Arabia) for high-level global market push</li>
-            <li>Drove gender pay equity and developed career pathways for distributed engineering teams</li>
-            <li>Led GTM and technical pre-sales for DoD, IRS, DHS, and U.S. Secret Service opportunities</li>
-            <li>Managed SOC, IR, and architecture teams, reducing ransomware incidents by 85% in 6 months</li>
-            <li>Published threat intelligence to HSIN and briefed agencies on APTs and ransomware defense</li>
-            <li>Delivered cloud-first modernization roadmaps with ROI models and funding strategies</li>
-            <li>Oversaw enterprise compliance across HIPAA, PCI-DSS, and NIST frameworks</li>
-        </ul>
-
-    <div class="section-title">National Threat Strategy, Product Innovation & Federal Partnership (2020–Present)</div>
-        <ul class="domain-list">
-            <li>Embedded in fusion center operations with FBI, Treasury, DOE, TSA, LVMPD, and the Nevada CISO to monitor national threat activity</li>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2020 – Present</div>
+          <div class="timeline-role">National Threat Strategy, Product Innovation &amp; Federal Partnership</div>
+          <ul class="timeline-items">
+            <li>Currently with Palo Alto Networks; prior roles at Verizon, ZeroFOX, and CyberClan</li>
+            <li>Embedded in SNCTC fusion center with FBI, Treasury, DOE, TSA, LVMPD, and Nevada CISO to monitor national threat activity</li>
             <li>Delivered cyber advisories and gang/actor intelligence to DHS via HSIN, strengthening public-sector defenses</li>
-            <li>Monitored threat activity targeting Nevada higher education, casinos, municipalities, and regional infrastructure</li>
-            <li>Drove MDR product demos and technical strategy for law enforcement and federal clients at ZeroFOX and CyberClan</li>
-            <li>Led product innovation for Verizon’s MXDR platform; cut AWS spend by $12K/month and slashed SIEM ingestion by 300%</li>
+            <li>Monitored threats targeting Nevada higher education, casinos, municipalities, and regional infrastructure</li>
+            <li>Led product innovation for Verizon's MXDR platform; cut AWS spend by $12K/month and slashed SIEM ingestion by 300%</li>
             <li>Automated SOC triage workflows with GenAI and Microsoft Sentinel, reducing false positives and analyst load</li>
             <li>Scoped and deployed AWS cloud security architectures with RBAC, Zero Trust, and compliance enforcement</li>
-            <li>Supported GTM execution at RSA, Black Hat, and ISC MENA, aligning with C-suite and agency stakeholders</li>
-        </ul>
-    </div>
-  </section>
+            <li>Represented executives at RSA, Black Hat, and ISC MENA, aligning with C-suite and agency stakeholders</li>
+          </ul>
+        </div>
 
-  <section id="trusted" class="trusted">
-  <div class="container">
-    <h2>Trusted by Leading Organizations</h2>
-    <div class="trusted-grid">
-      <div class="org">American Express</div>
-      <div class="org">Apple</div>
-      <div class="org">Disney Interactive</div>
-      <div class="org">Dreamworks</div>
-      <div class="org">Wells Fargo</div>
-      <div class="org">Department of Defense</div>
-      <div class="org">Department of Homeland Security</div>
-      <div class="org">US Secret Service</div>
-      <div class="org">Southern Nevada Counterterrorism Center</div>
-      <div class="org">Mattel</div>
-      <div class="org">Adobe</div>
-      <div class="org">GoPro</div>
-      <div class="org">Yahoo</div>
-      <div class="org">Zappos</div>
-    </div>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2015 – 2020</div>
+          <div class="timeline-role">C-Suite &amp; Board-Level Leadership | GTM Strategy | Security &amp; Solutions Engineering</div>
+          <ul class="timeline-items">
+            <li>Directed three departments at Vidant Health; interim manager for security ops and compliance</li>
+            <li>Oversaw Americas region at BlueVoyant — 3 regional managers and 15+ engineers</li>
+            <li>Advised boards and C-suites at BlueVoyant, Giant Oak, and LookingGlass on risk and GTM strategy</li>
+            <li>Accompanied LookingGlass CEO to MENA ISC (Saudi Arabia) for high-level global market engagement</li>
+            <li>Led GTM and technical pre-sales for DoD, IRS, DHS, and U.S. Secret Service opportunities</li>
+            <li>Reduced ransomware incidents by 85% in 6 months through SOC, IR, and architecture leadership</li>
+            <li>Published threat intelligence to HSIN; briefed agencies on APTs and ransomware defense posture</li>
+            <li>Drove gender pay equity initiatives and developed career pathways for distributed engineering teams</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2012 – 2015</div>
+          <div class="timeline-role">Security Advisory &amp; Engineering Leadership — Trustwave</div>
+          <ul class="timeline-items">
+            <li>Protected Caesars Entertainment infrastructure during DEF CON and World Series of Poker events</li>
+            <li>Advised Sony, Disney, and Wells Fargo on MDR, EDR, and PCI compliance implementations</li>
+            <li>Deployed SIEM agents across 14,400+ endpoints; resolved visibility and platform stability issues</li>
+            <li>Re-architected Walgreens Office 365 enterprise migration, eliminating $287K in annual overhead</li>
+            <li>Represented Trustwave at Black Hat, DEF CON, and RSA for partner and customer engagements</li>
+            <li>Supported regulatory compliance through firewall, proxy, and DLP policy enforcement</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2009 – 2011</div>
+          <div class="timeline-role">Information Security &amp; Risk Leadership — Financial Sector</div>
+          <ul class="timeline-items">
+            <li>Designed and deployed secure network infrastructure, achieving high GLBA and FFIEC audit scores</li>
+            <li>Integrated secondary data center with active-active failover for high availability and resilience</li>
+            <li>Certified in Check Point NGX R70; configured, monitored, and optimized firewall performance</li>
+            <li>Led incident response operations, mitigating threats and minimizing business impact</li>
+            <li>Engineered disaster recovery and failover solutions to support business continuity</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2000 – 2009</div>
+          <div class="timeline-role">Senior Infrastructure, Systems &amp; Network Engineer</div>
+          <ul class="timeline-items">
+            <li>Deployed first regional blade center with fiber SAN; led early adoption of thin client technology</li>
+            <li>Reduced thin client setup time to 5 minutes with automated DHCP configuration workflows</li>
+            <li>Architected bonded 3-T1 connectivity across states; designed secure VPNs for remote sales staff</li>
+            <li>Managed Cisco ISR, switching, and routing for secure, resilient infrastructure</li>
+            <li>Managed IBM WebSphere, Tivoli Storage Manager, and iSeries for enterprise reliability</li>
+            <li>Orchestrated e-Discovery initiatives supporting active corporate litigation</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── TRUSTED BY ── -->
+    <section id="trusted">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-handshake"></i></div>
+        <h2>Trusted by Leading Organizations</h2>
+      </div>
+      <div class="org-grid">
+        <div class="org-card">American Express</div>
+        <div class="org-card">Apple</div>
+        <div class="org-card">Disney Interactive</div>
+        <div class="org-card">DreamWorks</div>
+        <div class="org-card">Wells Fargo</div>
+        <div class="org-card">Sony</div>
+        <div class="org-card">Department of Defense</div>
+        <div class="org-card">Dept. of Homeland Security</div>
+        <div class="org-card">U.S. Secret Service</div>
+        <div class="org-card">SNCTC / FBI Fusion Center</div>
+        <div class="org-card">Walgreens</div>
+        <div class="org-card">Verizon</div>
+        <div class="org-card">Vidant Health</div>
+        <div class="org-card">Caesars Entertainment</div>
+        <div class="org-card">Mattel</div>
+        <div class="org-card">Adobe</div>
+        <div class="org-card">GoPro</div>
+        <div class="org-card">Yahoo</div>
+        <div class="org-card">Zappos</div>
+      </div>
+    </section>
+
+    <!-- ── CERTIFICATIONS ── -->
+    <section id="certifications">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-certificate"></i></div>
+        <h2>Certifications</h2>
+      </div>
+      <div class="cert-grid">
+
+        <div class="cert-card">
+          <div class="cert-icon isc2"><i class="fas fa-shield-halved"></i></div>
+          <div>
+            <div class="cert-title">CISSP</div>
+            <div class="cert-issuer">(ISC)² &nbsp;·&nbsp; Jun 2025 – Jun 2028 &nbsp;·&nbsp; ID: 830143</div>
+            <div class="cert-issuer" style="color:#0d7377;font-size:0.75rem;margin-top:0.2rem;">DoD 8570/8140 Compliant</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon palo"><i class="fas fa-fire"></i></div>
+          <div>
+            <div class="cert-title">Palo Alto Networks: Cortex XDR, XSIAM &amp; XSOAR</div>
+            <div class="cert-issuer">Palo Alto Networks &nbsp;·&nbsp; Oct 2025</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon palo"><i class="fas fa-cloud-bolt"></i></div>
+          <div>
+            <div class="cert-title">Palo Alto Networks: Cloud Security Fundamentals &amp; Security Operations</div>
+            <div class="cert-issuer">Palo Alto Networks &nbsp;·&nbsp; Oct 2025</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon msft"><i class="fab fa-microsoft"></i></div>
+          <div>
+            <div class="cert-title">Azure AI Fundamentals (AI-900)</div>
+            <div class="cert-issuer">Microsoft &nbsp;·&nbsp; Jul 2024 – Jul 2026</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon msft"><i class="fab fa-microsoft"></i></div>
+          <div>
+            <div class="cert-title">Security, Compliance &amp; Identity Fundamentals (SC-900)</div>
+            <div class="cert-issuer">Microsoft &nbsp;·&nbsp; Jun 2024 – Jun 2026</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon msft"><i class="fab fa-microsoft"></i></div>
+          <div>
+            <div class="cert-title">Azure Fundamentals (AZ-900)</div>
+            <div class="cert-issuer">Microsoft &nbsp;·&nbsp; Oct 2023 – Oct 2025</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon aws"><i class="fab fa-aws"></i></div>
+          <div>
+            <div class="cert-title">AWS Certified Cloud Practitioner</div>
+            <div class="cert-issuer">Amazon Web Services &nbsp;·&nbsp; Dec 2022 – Dec 2025</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon mit"><i class="fas fa-flask"></i></div>
+          <div>
+            <div class="cert-title">Applied Data Science</div>
+            <div class="cert-issuer">MIT Professional Education &nbsp;·&nbsp; Aug 2022</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ── -->
+    <section id="education">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h2>Education</h2>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-icon"><i class="fas fa-university"></i></div>
+        <div>
+          <div class="edu-degree">Bachelor of Science, Business Management</div>
+          <div class="edu-school">Western Governors University &nbsp;·&nbsp; HIMSS Affiliate Member</div>
+          <div class="edu-year">Graduated Mar 2020</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-icon"><i class="fas fa-microchip"></i></div>
+        <div>
+          <div class="edu-degree">Associate of Science, Computer Science</div>
+          <div class="edu-school">Indiana University South Bend</div>
+          <div class="edu-year">Graduated May 2004</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-flask"></i></div>
+        <h2>Strategic Projects</h2>
+      </div>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div class="project-tag"><i class="fas fa-lock"></i> Cryptography</div>
+          <div class="project-title">Post-Quantum Cryptographic Framework</div>
+          <ul class="project-items">
+            <li>Built encryption workflows using AES-256, Kyber, Dilithium, and SPHINCS+</li>
+            <li>Serverless key generation outside cloud KMS; integrated with secure vault storage</li>
+            <li>Hardened key lifecycle against Harvest-Now, Decrypt-Later quantum threat models</li>
+            <li>Aligned with NIST post-quantum cryptography standards (FIPS 203/204/205)</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag"><i class="fas fa-key"></i> Cloud Security</div>
+          <div class="project-title">Azure Vault-Based PQ Key Management</div>
+          <ul class="project-items">
+            <li>Serverless PQClean-based key generation for Kyber, Dilithium, SPHINCS+</li>
+            <li>Integration with Azure Key Vault Premium for quantum-safe storage</li>
+            <li>DevSecOps alignment and emerging cryptographic standard compliance</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag"><i class="fas fa-robot"></i> AI / GenAI</div>
+          <div class="project-title">Google Generative AI Intensive Course</div>
+          <ul class="project-items">
+            <li>Completed Kaggle &amp; Google 5-day GenAI Intensive (Nov 2024)</li>
+            <li>Covered foundational LLMs, embeddings, agents, and MLOps</li>
+            <li>Applied GenAI techniques to SOC automation and threat triage use cases</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag"><i class="fas fa-comments"></i> AI Tooling</div>
+          <div class="project-title">ChatGPT-Integrated Professional Profile Chatbot</div>
+          <ul class="project-items">
+            <li>Designed an AI Q&amp;A interface for real-time recruiter engagement</li>
+            <li>Enabled fast interactive vetting via prompt-driven dynamic responses</li>
+            <li>Used advanced prompt engineering for clarity and domain relevance</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag"><i class="fas fa-chart-bar"></i> Data Science</div>
+          <div class="project-title">MIT Applied Data Science Capstone</div>
+          <ul class="project-items">
+            <li>Case studies: marketing analysis, air quality, vehicle efficiency, HR attrition prediction</li>
+            <li>Applied ML techniques including classification, regression, and clustering</li>
+            <li>SQL proficiency — HackerRank 830 points, 5-star rating</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag"><i class="fas fa-newspaper"></i> Cyberdash</div>
+          <div class="project-title">Cybersecurity News Dashboard</div>
+          <ul class="project-items">
+            <li>Python-powered real-time cyber threat news aggregation platform</li>
+            <li>Built to surface actionable intelligence for security operations teams</li>
+            <li>Available on GitHub: github.com/tsummey/cyberdash</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── PUBLICATIONS ── -->
+    <section id="publications">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-pen-nib"></i></div>
+        <h2>Publications &amp; Articles</h2>
+      </div>
+      <div class="pub-list">
+        <div class="pub-card">
+          <div class="pub-date">Jan 2025</div>
+          <div class="pub-title">AI Showdown: OpenAI's GPT-4, DeepSeek-V3, and Qwen2.5 — A Comparative Analysis</div>
+        </div>
+        <div class="pub-card">
+          <div class="pub-date">Jan 2025</div>
+          <div class="pub-title">DeepSeek AI: A Security Risk in China's Tech Ambitions</div>
+        </div>
+        <div class="pub-card">
+          <div class="pub-date">Dec 2022</div>
+          <div class="pub-title">How Hackers Beat Multi-Factor Authentication (MFA) Using Enhanced Techniques</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-layer-group"></i></div>
+        <h2>Core Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <span class="skill-chip">SIEM / SOAR</span>
+        <span class="skill-chip">Zero Trust Architecture</span>
+        <span class="skill-chip">Threat Intelligence</span>
+        <span class="skill-chip">Incident Response</span>
+        <span class="skill-chip">MDR / EDR / XDR</span>
+        <span class="skill-chip">Microsoft Sentinel</span>
+        <span class="skill-chip">Cortex XDR &amp; XSIAM</span>
+        <span class="skill-chip">AWS Cloud Security</span>
+        <span class="skill-chip">Azure Security</span>
+        <span class="skill-chip">PCI-DSS</span>
+        <span class="skill-chip">HIPAA</span>
+        <span class="skill-chip">NIST Frameworks</span>
+        <span class="skill-chip">DoD 8570 / 8140</span>
+        <span class="skill-chip">Post-Quantum Cryptography</span>
+        <span class="skill-chip">GenAI &amp; LLM Integration</span>
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">PowerShell</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">Machine Learning</span>
+        <span class="skill-chip">GTM Strategy</span>
+        <span class="skill-chip">C-Suite Advisory</span>
+        <span class="skill-chip">Board Presentation</span>
+        <span class="skill-chip">Pre-Sales Engineering</span>
+        <span class="skill-chip">InfraGard Member</span>
+      </div>
+    </section>
   </div>
-</section>
 
-<section id="certifications" class="certifications">
-  <div class="summary">
-    <h2>Certifications</h2>
-    <ul class="domain-list">
-      <li>CISSP – (ISC)², May 2025 - May 2028</li>
-      <li>DoD 8570/8140 Compliant (via CISSP) – (ISC)², May 2025 - May 2028</li>
-      <li>Applied Data Science – MIT Professional Education, Aug 2022</li>
-      <li>AWS Certified Cloud Practitioner – AWS, Dec 2022 - Dec 2025</li>
-      <li>Microsoft Certified: Azure Fundamentals – Microsoft, Oct 2023 - Oct 2025</li>
-      <li>Microsoft Certified: Security, Compliance, and Identity Fundamentals – Microsoft, Jun 2024 - Jun 2026</li>
-      <li>Microsoft Certified: Azure AI Fundamentals – Microsoft, Jul 2024 - Jul 2026</li>
-    </ul>
-  </div>
-</section>
-
-<section id="education" class="education">
-  <div class="summary">
-    <h2>Education</h2>
-    <ul class="domain-list">
-      <li><strong>B.S. Business Management</strong> – Western Governors University, Mar 2020</li>
-      <li><strong>A.S. Computer Science</strong> – Indiana University South Bend, May 2004</li>
-    </ul>
-  </div>
-</section>
-
-<section id="projects" class="projects">
-  <div class="summary">
-    <h2>Strategic Projects</h2>
-
-    <div class="section-title">Post-Quantum Cryptographic Framework</div>
-    <ul class="domain-list">
-      <li>Built encryption workflows using AES-256, Kyber, Dilithium, and Sphincs+</li>
-      <li>Created serverless key gen outside cloud KMS; integrated with secure vault storage</li>
-      <li>Hardened key lifecycle against Harvest-Now, Decrypt-Later quantum threat models</li>
-    </ul>
-
-    <div class="section-title">ChatGPT-Integrated Professional Profile Chatbot</div>
-    <ul class="domain-list">
-      <li>Designed an AI Q&A interface for real-time recruiter engagement</li>
-      <li>Enabled fast interactive vetting via prompt-driven dynamic responses</li>
-      <li>Used prompt engineering to drive clarity and domain relevance</li>
-    </ul>
-
-    <div class="section-title">Planned: Azure Vault-Based PQ Key Management</div>
-    <ul class="domain-list">
-      <li>Building serverless PQClean-based key gen for Kyber, Dilithium, SPHINCS+</li>
-      <li>Integrating with Azure Key Vault Premium for quantum-safe storage</li>
-      <li>Aligning with emerging cryptographic standards and DevSecOps protocols</li>
-    </ul>
-  </div>
-</section>
-
+  <!-- ── FOOTER ── -->
   <footer id="contact" role="contentinfo">
-    &copy; 2024 Ted Summey. All rights reserved.
+    <p style="margin-bottom:0.5rem;">
+      <a href="mailto:tsummey@tsummey.com">tsummey@tsummey.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://linkedin.com/in/tedsummey" target="_blank">LinkedIn</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/tsummey" target="_blank">GitHub</a>
+    </p>
+    <p>&copy; 2025 Ted Summey, CISSP. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
